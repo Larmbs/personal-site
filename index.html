@@ -17,11 +17,11 @@
 
   <nav class="navbar">
     <div class="vertical-line"></div>
-    <a>Home</a>
+    <a href="?page=home">Home</a>
     <div class="vertical-line"></div>
-    <a>Articles</a>
+    <a href="?page=articles">Articles</a>
     <div class="vertical-line"></div>
-    <a>About Me</a>
+    <a href="?page=aboutMe">About Me</a>
     <div class="vertical-line"></div>
   </nav>
 
@@ -52,12 +52,31 @@
   </footer>
 
   <script>
-    // Script to load article
-    fetch("articles/rust-computer.md")
-      .then(r => r.text())
-      .then(text => {
-        document.getElementById('content').innerHTML = marked.parse(text);
-      });
+    // Getting URL params and determining what to load
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get("page");
+
+    if (page === null || page === "home") {
+      load_content("home.md")
+    } else if (page === "aboutMe") {
+      load_content("about-me.md")
+    } else if (page == "articles") {
+      const article_name = urlParams.get("article");
+      if (article_name == null) {
+        load_content("articles.md")
+      } else {
+        load_content("articles" + article_name)
+      }
+    }
+
+    function load_content(content) {
+      fetch("assets/" + content)
+        .then(r => r.text())
+        .then(text => {
+          document.getElementById('content').innerHTML = marked.parse(text);
+        });
+    }
+
   </script>
 
 </body>

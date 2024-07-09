@@ -21,6 +21,10 @@ body {
     overflow-x: hidden;
     max-width: 100%;
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
 
     /* Background of page */
     background-color: var(--primary-color);
@@ -58,7 +62,9 @@ Navbar and Hero Styling
         repeating-radial-gradient(circle at 0 0, transparent 0, var(--primary-color) 40px),
         repeating-linear-gradient(var(--transition-color), var(--accent-color));
 }
+
 .navbar {
+    box-shadow: 1px 2px 20px var(--accent-color);
     width: 100%;
     background-color: var(--primary-color);
     height: 5vh;
@@ -69,17 +75,22 @@ Navbar and Hero Styling
     justify-content: center;
     gap: 10%;
 }
+
 .navbar a {
     font-size: x-large;
     font-weight: bold;
+    text-decoration: none;
+    color: white;
 }
 
 /*
 Article and Markup Styling
 */
 .content {
-    padding: 5vw;
-    margin: 5vw;
+    border-radius: 10px;
+    box-shadow: 1px 2px 20px var(--accent-color);
+    padding: 3vw 3vw 4vw 4vw;
+    margin: 3vw 3vw 5vw 5vw;
     background-color: var(--secondary-color);
 }
 
@@ -87,15 +98,18 @@ Article and Markup Styling
 Footer stylings
 */
 footer {
+    margin-top: auto;
     background-color: var(--primary-color);
     padding-top: 5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 footer p {
     margin-top: 5%;
 }
+
 .footer-cards {
     width: 100%;
     display: flex;
@@ -110,12 +124,15 @@ Link Styling
 .custom-link {
     color: var(--link-color);
 }
+
 .custom-link:visited {
     color: var(--link-visited-color);
 }
+
 .custom-link:hover {
     color: var(--link-hover-color);
 }
+
 .custom-link:active {
     color: var(--link-color);
 }
