@@ -6,13 +6,13 @@
 
 A neural network allows us to solve impossible problems that no one could normally solve. 
 
-These problems are very difficult to model ourselves given our tools so we allow a function to learn some of the expected outcomes in order to learn the underlying pattern behind it.
+These problems are very difficult to model ourselves given our tools, so we allow a function to learn some expected outcomes in order to learn the underlying pattern behind it.
 
 Networks solve problems like speech recognition, image recognition, and predictions.
 
 These networks model themselves based on the human brain. Our neurons work by interconnecting with each other and holding weights and biases within themselves to properly convey their state. We model networks similar to this we have just simplified the process down and streamlined it to speed up processing for our own sake.
 
-Neural networks have become readable through the rise of gpu computing as networks were able to be simplified down to an array of matrix multiplication that gpus excel at. As of late new machine learning processors have come into production which streamline some of the common operations to further push training speeds and solve speeds.
+Neural networks have become more prevalent than ever thanks to the rise of GPU computing as neural networks are themselves just matrix multiplications perfect for a GPU. As of late new machine learning processors have come into production which streamline some common operations to further push training speeds and solve speeds.
 
 ***
 ## Problem Types

@@ -5,9 +5,9 @@ Welcome to the documentation for Queued Rust, a crate designed to provide queue 
 
 ## Features
 All queues implement a max_size feature to better constraint them.
-Queues have a reverse field so you can switch the ordering of a queue.
+Queues have a reverse field, so you can switch the ordering of a queue.
 So you can turn a FIFO queue to a FOFI queue.
-And turn a priority queue to lowest priority queue.
+And turn a priority queue to a lowest priority queue.
 
  - Queue: A basic FIFO (First-In, First-Out) queue.
  - SortedQueue: A queue that maintains elements in sorted order.

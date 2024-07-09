@@ -16,7 +16,7 @@ This section of layers is primarily used in images recognition and other image p
 - This is useful for extracting the main features of data like edges by allowing user to apply their own filters.
 
 ##### Pooling
-- Downscales data through some kernel
+- Downscale data through some kernel
 - This helps to speed up solve speeds by simplifying the network down to a more manageable level.
 
 
