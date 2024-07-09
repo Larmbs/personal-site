@@ -131,19 +131,23 @@ footer p {
 /*
 Link Styling
 */
-.custom-link, .content a {
+.custom-link,
+.content a {
     color: var(--link-color);
     font-style: italic;
 }
 
-.custom-link:visited, .content a {
+.custom-link:visited,
+.content a {
     color: var(--link-visited-color);
 }
 
-.custom-link:hover, .content a {
+.custom-link:hover,
+.content a {
     color: var(--link-hover-color);
 }
 
-.custom-link:active, .content a {
+.custom-link:active,
+.content a {
     color: var(--link-color);
 }
