@@ -1,9 +1,17 @@
 # Choose an article
 ---
-## Personal Articles
-- [Test Page](?page=articles&article=test.md)
+## Crates
+- [Queued Rust Documentation](?page=articles&article=queued-rust.md)
 
-## Documentation On Projects
-- [Queued Rust Documentation](?page=articles&article=queued-rust.md)
-- [Queued Rust Documentation](?page=articles&article=queued-rust.md)
+## Machine Learning and Neural Nets
+- [My Env](?page=articles&article=ml/machine-learning-env.md)
+- [Guide](?page=articles&article=ml/neural-network-guide.md)
+- [Layers Guide](?page=articles&article=ml/neural-network-layers.md)
+- [Optimizers Guide](?page=articles&article=ml/neural-network-optimizers.md)
+
+## Low Level
+...
+
+## Networking
+...
 ---
