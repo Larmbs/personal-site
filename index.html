@@ -1,101 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Liam Israel | [Personal Site]</title>
+    <link rel="stylesheet" href="styles.css" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Liam Israels Site</title>
-  <link rel="stylesheet" href="styles.css">
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Markdown to HTML conversion-->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-  <!-- Markdown to HTML conversion-->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/paraiso-dark.min.css"
+    />
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/go.min.js"></script>
+  </head>
 
-  <!-- Syntax highlighting -->
-  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/paraiso-dark.min.css">
-  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
-  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/go.min.js"></script>
-</head>
-
-<body>
-  <!-- Hero element -->
-  <div class="hero">
-    <h1>Liam Israel</h1>
-  </div>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="vertical-line"></div>
-    <a href="?page=home">Home</a>
-    <div class="vertical-line"></div>
-    <a href="?page=articles">Articles</a>
-    <div class="vertical-line"></div>
-    <a href="?page=aboutMe">About Me</a>
-    <div class="vertical-line"></div>
-    <a href="?page=contact">Contact</a>
-    <div class="vertical-line"></div>
-  </nav>
-
-  <div class="content" id="content">
-    <!--Article will go here-->
-  </div>
-  <div class="select-element">
-    <!--Here is where to search for items and a list will show up-->
-  </div>
-
-  <footer>
-    <!--Footer cards-->
-    <div class="footer-cards">
-      <div>
-        <i class="fab fa-github"></i>
-        Find Larmbs on
-        <a target="_blank" class="custom-link" href="https://github.com/Larmbs">GitHub</a>
-      </div>
-      <div>
-        <i class="fab fa-linkedin"></i>
-        Find me on
-        <a target="_blank" class="custom-link" href="https://www.linkedin.com/in/liam-israel-729121292/">Linkedin</a>
-      </div>
-      <div>
-        <i class="fas fa-envelope"></i>
-        Email me at
-        <a target="_blank" class="custom-link" href="mailto: liamisrael200@gmail.com">liamisrael200@gmail.com</a>
-      </div>
+  <body>
+    <!-- Hero element -->
+    <div class="hero">
+      <h3>[Personal Site]</h3>
+      <p>A place to share and share.</p>
     </div>
-    <p>&copy; 2024 Modern Website. All rights reserved.</p>
-  </footer>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="vertical-line"></div>
+      <a href="?page=home">Home</a>
+      <div class="vertical-line"></div>
+      <a href="?page=articles">Articles</a>
+      <div class="vertical-line"></div>
+      <a href="?page=aboutMe">About Me</a>
+      <div class="vertical-line"></div>
+    </nav>
 
-  <script>
-    // Getting URL params and determining what to load
-    const urlParams = new URLSearchParams(window.location.search);
-    const page = urlParams.get("page");
+    <div class="content" id="content">
+      <!--Article will go here-->
+    </div>
+    <div class="select-element">
+      <!--Here is where to search for items and a list will show up-->
+    </div>
 
-    // Handling cases
-    if (page === null || page === "home") {
-      load_content("home.md")
-    } else if (page === "aboutMe") {
-      load_content("about-me.md")
-    } else if (page == "contact") {
-      load_content("contact.md")
-    } else if (page == "articles") {
-      const article_name = urlParams.get("article");
-      if (article_name == null) {
-        load_content("articles.md")
-      } else {
-        load_content(`articles/${article_name}`)
+    <footer>
+      <!--Footer cards-->
+      <div class="footer-cards">
+        <div>
+          <i class="fab fa-github"></i>
+          Find Larmbs on
+          <a
+            target="_blank"
+            class="custom-link"
+            href="https://github.com/Larmbs"
+            >GitHub</a
+          >
+        </div>
+        <div>
+          <i class="fab fa-linkedin"></i>
+          Find me on
+          <a
+            target="_blank"
+            class="custom-link"
+            href="https://www.linkedin.com/in/liam-israel-729121292/"
+            >Linkedin</a
+          >
+        </div>
+        <div>
+          <i class="fas fa-envelope"></i>
+          Email me at
+          <a
+            target="_blank"
+            class="custom-link"
+            href="mailto: liamisrael200@gmail.com"
+            >liamisrael200@gmail.com</a
+          >
+        </div>
+      </div>
+      <hr>
+      <p>Copyright &copy; 2024 <em>Liam Israel</em>. All rights reserved. </p>
+    </footer>
+
+    <script>
+      // Getting URL params and determining what to load
+      const urlParams = new URLSearchParams(window.location.search);
+      const page = urlParams.get("page");
+
+      // Handling cases
+      if (page === null || page === "home") {
+        load_content("home.md");
+      } else if (page === "aboutMe") {
+        load_content("about-me.md");
+      } else if (page == "articles") {
+        const article_name = urlParams.get("article");
+        if (article_name == null) {
+          load_content("articles.md");
+        } else {
+          load_content(`articles/${article_name}`);
+        }
       }
-    }
 
-    function load_content(content) {
-      fetch("assets/" + content)
-        .then(r => r.text())
-        .then(text => {
-          document.getElementById('content').innerHTML = marked.parse(text);
-          // Updating syntax highlighting
-          hljs.highlightAll();
-        });
-    }
-  </script>
-</body>
-
+      function load_content(content) {
+        fetch("assets/" + content)
+          .then((r) => r.text())
+          .then((text) => {
+            document.getElementById("content").innerHTML = marked.parse(text);
+            // Updating syntax highlighting
+            hljs.highlightAll();
+          });
+      }
+    </script>
+  </body>
 </html>

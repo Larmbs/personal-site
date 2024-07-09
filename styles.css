@@ -41,7 +41,7 @@ body {
 }
 
 .vertical-line {
-    width: 2px;
+    width: 1px;
     background-color: white;
     height: 70%;
 }
@@ -50,17 +50,32 @@ body {
 Navbar and Hero Styling
 */
 .hero {
-    width: 100%;
-    height: 20vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    gap: 1vw;
+    padding-top: 1.5vw;
+    padding-bottom: 0.5vw;
+    
+    /* Hero Background */
     background-color: var(--primary-color);
-    font-size: xx-large;
-    font-weight: bold;
     background-image:
         repeating-radial-gradient(circle at 0 0, transparent 0, var(--primary-color) 40px),
         repeating-linear-gradient(var(--transition-color), var(--accent-color));
+}
+
+.hero h3 {
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.hero p {
+    background-color: var(--transition-color);
+    font-size: large;
 }
 
 .navbar {
@@ -116,8 +131,12 @@ footer {
     align-items: center;
 }
 
-footer p {
-    margin-top: 5%;
+footer hr {
+    height: 1px;
+    width: 60%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    background-color: white;
 }
 
 .footer-cards {
