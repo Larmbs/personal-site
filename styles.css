@@ -1,37 +1,121 @@
-/* Basic styling */
-body {
-    overflow-x: hidden;
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
+/* CSS Constants */
+:root {
+    /* Basic Styling*/
+    --primary-color: #1c1c4e;
+    --secondary-color: #272739;
+    --transition-color: #ab6a6a55;
+    --accent-color: #ab6a6a;
+    --base-opacity: 0.95;
+
+    /* Link Styling */
+    --link-color: aqua;
+    --link-hover-color: rgb(0, 219, 219);
+    --link-visited-color: rgb(132, 77, 234);
 }
 
-/* Styling for article content */
+/*
+Basic body styling
+*/
+body {
+    /* Removing side scroll */
+    overflow-x: hidden;
+    max-width: 100%;
+    margin: 0;
+
+    /* Background of page */
+    background-color: var(--primary-color);
+    opacity: var(--base-opacity);
+    background:
+        linear-gradient(135deg, var(--transition-color) 25%, transparent 25%) -16px 0/ 32px 32px,
+        linear-gradient(225deg, var(--accent-color) 25%, transparent 25%) -16px 0/ 32px 32px,
+        linear-gradient(315deg, var(--transition-color) 25%, transparent 25%) 0px 0/ 32px 32px,
+        linear-gradient(45deg, var(--accent-color) 25%, var(--primary-color)25%) 0px 0/ 32px 32px;
+
+    /*  Global Styles */
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.vertical-line {
+    width: 2px;
+    background-color: white;
+    height: 70%;
+}
+
+/*
+Navbar and Hero Styling
+*/
+.hero {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    font-size: xx-large;
+    font-weight: bold;
+    background-image:
+        repeating-radial-gradient(circle at 0 0, transparent 0, var(--primary-color) 40px),
+        repeating-linear-gradient(var(--transition-color), var(--accent-color));
+}
+.navbar {
+    width: 100%;
+    background-color: var(--primary-color);
+    height: 5vh;
+    opacity: var(--base-opacity);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+}
+.navbar a {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+/*
+Article and Markup Styling
+*/
 .content {
     padding: 5vw;
     margin: 5vw;
-    background-color: rgb(165, 165, 176);    
-    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--secondary-color);
 }
 
-/* Styling for footer */
+/*
+Footer stylings
+*/
 footer {
-    background-color: lightblue;
-    padding: none;
-    margin: none;
+    background-color: var(--primary-color);
+    padding-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer p {
+    margin-top: 5%;
+}
+.footer-cards {
     width: 100%;
-    height: 20vh;
-    display: grid;
-    grid-auto-flow: column;
-}
-
-.footer-item {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    margin: auto;
+    gap: 5%;
 }
 
-.footer-item * {
-    font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: none;
+/*
+Link Styling
+*/
+.custom-link {
+    color: var(--link-color);
+}
+.custom-link:visited {
+    color: var(--link-visited-color);
+}
+.custom-link:hover {
+    color: var(--link-hover-color);
+}
+.custom-link:active {
+    color: var(--link-color);
 }
