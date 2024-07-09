@@ -73,7 +73,7 @@ Navbar and Hero Styling
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10%;
+    gap: 5%;
 }
 
 .navbar a {
@@ -89,9 +89,19 @@ Article and Markup Styling
 .content {
     border-radius: 10px;
     box-shadow: 1px 2px 20px var(--accent-color);
-    padding: 3vw 3vw 4vw 4vw;
-    margin: 3vw 3vw 5vw 5vw;
+    padding: 0.5vw 4vw 2vw;
+    margin: 3vw 5vw 3vw;
     background-color: var(--secondary-color);
+}
+
+.content hr {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.content pre {
+    width: 95%;
 }
 
 /*
@@ -121,18 +131,19 @@ footer p {
 /*
 Link Styling
 */
-.custom-link {
+.custom-link, .content a {
     color: var(--link-color);
+    font-style: italic;
 }
 
-.custom-link:visited {
+.custom-link:visited, .content a {
     color: var(--link-visited-color);
 }
 
-.custom-link:hover {
+.custom-link:hover, .content a {
     color: var(--link-hover-color);
 }
 
-.custom-link:active {
+.custom-link:active, .content a {
     color: var(--link-color);
 }

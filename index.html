@@ -7,6 +7,12 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/paraiso-dark.min.css">
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+
+  <!-- and it's easy to individually load additional languages -->
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/go.min.js"></script>
 </head>
 
 <body>
@@ -23,10 +29,15 @@
     <div class="vertical-line"></div>
     <a href="?page=aboutMe">About Me</a>
     <div class="vertical-line"></div>
+    <a href="?page=contact">Contact</a>
+    <div class="vertical-line"></div>
   </nav>
 
   <div class="content" id="content">
     <!--Article will go here-->
+  </div>
+  <div class="select-element">
+    <!--Here is where to search for items and a list will show up-->
   </div>
 
   <footer>
@@ -35,17 +46,17 @@
       <div>
         <i class="fab fa-github"></i>
         Find Larmbs on
-        <a class="custom-link" href="https://github.com/Larmbs">GitHub</a>
+        <a target="_blank" class="custom-link" href="https://github.com/Larmbs">GitHub</a>
       </div>
       <div>
         <i class="fab fa-linkedin"></i>
         Find me on
-        <a class="custom-link" href="https://www.linkedin.com/in/liam-israel-729121292/">Linkedin</a>
+        <a target="_blank" class="custom-link" href="https://www.linkedin.com/in/liam-israel-729121292/">Linkedin</a>
       </div>
       <div>
         <i class="fas fa-envelope"></i>
         Email me at
-        <a class="custom-link" href="mailto: liamisrael200@gmail.com">liamisrael200@gmail.com</a>
+        <a target="_blank" class="custom-link" href="mailto: liamisrael200@gmail.com">liamisrael200@gmail.com</a>
       </div>
     </div>
     <p>&copy; 2024 Modern Website. All rights reserved.</p>
@@ -56,16 +67,19 @@
     const urlParams = new URLSearchParams(window.location.search);
     const page = urlParams.get("page");
 
+    // Handling cases
     if (page === null || page === "home") {
       load_content("home.md")
     } else if (page === "aboutMe") {
       load_content("about-me.md")
+    } else if (page == "contact") {
+      load_content("contact.md")
     } else if (page == "articles") {
       const article_name = urlParams.get("article");
       if (article_name == null) {
         load_content("articles.md")
       } else {
-        load_content("articles" + article_name)
+        load_content(`articles/${article_name}`)
       }
     }
 
@@ -74,9 +88,12 @@
         .then(r => r.text())
         .then(text => {
           document.getElementById('content').innerHTML = marked.parse(text);
+          // Updating syntax highlighting
+          hljs.highlightAll();
         });
     }
 
+    
   </script>
 
 </body>
