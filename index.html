@@ -81,8 +81,8 @@
           >
         </div>
       </div>
-      <hr>
-      <p>Copyright &copy; 2024 <em>Liam Israel</em>. All rights reserved. </p>
+      <hr />
+      <p>Copyright &copy; 2024 <em>Liam Israel</em>. All rights reserved.</p>
     </footer>
 
     <script>
@@ -91,17 +91,13 @@
       const page = urlParams.get("page");
 
       // Handling cases
-      if (page === null || page === "home") {
-        load_content("home.md");
-      } else if (page === "aboutMe") {
-        load_content("about-me.md");
-      } else if (page == "articles") {
+      if (page === null || page === "home") {load_content("home.md");}
+      else if (page === "aboutMe") {load_content("about-me.md");}
+      else if (page == "articles") 
+      {
         const article_name = urlParams.get("article");
-        if (article_name == null) {
-          load_content("articles.md");
-        } else {
-          load_content(`articles/${article_name}`);
-        }
+        if (article_name == null) {load_content("articles.md");}
+        else {load_content(`articles/${article_name}`);}
       }
 
       function load_content(content) {

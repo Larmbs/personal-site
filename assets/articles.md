@@ -1,17 +1,20 @@
-# Choose an article
+# Articles
 ---
-## Crates
-- [Queued Rust Documentation](?page=articles&article=queued-rust.md)
+> Here is a selection of articles I've written on a variety of things. You can find crates, tutorials, guides, and projects here.
 
-## Machine Learning and Neural Nets
+### Crates
+- [Queued Rust Documentation](?page=articles&article=crates/queued-rust.md)
+
+### Machine Learning and Neural Nets
 - [My Env](?page=articles&article=ml/machine-learning-env.md)
 - [Guide](?page=articles&article=ml/neural-network-guide.md)
 - [Layers Guide](?page=articles&article=ml/neural-network-layers.md)
 - [Optimizers Guide](?page=articles&article=ml/neural-network-optimizers.md)
 
-## Low Level
-...
+### Low Level
+- 
 
-## Networking
-...
+### Networking
+- 
+
 ---
