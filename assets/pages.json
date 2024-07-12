@@ -1,0 +1,26 @@
+{
+  "home": {
+    "src": "assets/site/home.md"
+  },
+  "article_select": {
+    "src": "assets/site/article_select.md"
+  },
+  "about_me": {
+    "src": "assets/site/about_me.md"
+  },
+  "articles": {
+    "My Machine Learning Env": {
+      "src": "assets/text/ml/machine-learning-env.md"
+    },
+    "Neural Network Guide": {
+      "src": "assets/text/ml/neural-network-guide.md"
+    },
+    "Neural Network Layers": {
+      "src": "assets/text/ml/neural-network-layers.md"
+    },
+    "Neural Network Optimizers": {
+      "src": "assets/text/ml/neural-network-optimizers.md"
+    }
+  },
+  "featured": ["My Machine Learning Env", "Neural Network Guide"]
+}

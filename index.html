@@ -36,82 +36,140 @@
       <div class="vertical-line"></div>
       <a href="?page=articles">Articles</a>
       <div class="vertical-line"></div>
-      <a href="?page=aboutMe">About Me</a>
+      <a href="?page=about_me">About Me</a>
       <div class="vertical-line"></div>
     </nav>
-
-    <div class="content" id="content">
-      <!--Article will go here-->
+    <!-- Main part of page -->
+    <div class="main-document">
+      <div class="content" id="content">
+        <!--Article will go here-->
+      </div>
+      <!-- List of articles and featured ones go here-->
+      <div id="list-mask" style="display: none">
+        <div class="article-list">
+          <h2 class="selection-list-header">
+            Featured
+            <hr />
+          </h2>
+          <!-- Featured items go here -->
+          <ol id="featured-list" class="selection-list"></ol>
+          <h2 class="selection-list-header">
+            Others you might like
+            <hr />
+          </h2>
+          <!-- Featured items go here -->
+          <ul id="regular-select-list" class="selection-list"></ul>
+        </div>
+      </div>
     </div>
-    <div class="select-element">
-      <!--Here is where to search for items and a list will show up-->
-    </div>
-
     <footer>
       <!--Footer cards-->
       <div class="footer-cards">
         <div>
           <i class="fab fa-github"></i>
           Find Larmbs on
-          <a
-            target="_blank"
-            class="custom-link"
-            href="https://github.com/Larmbs"
-            >GitHub</a
-          >
+          <a target="_blank" class="custom-link" id="github">GitHub</a>
         </div>
         <div>
           <i class="fab fa-linkedin"></i>
           Find me on
-          <a
-            target="_blank"
-            class="custom-link"
-            href="https://www.linkedin.com/in/liam-israel-729121292/"
-            >Linkedin</a
-          >
+          <a target="_blank" class="custom-link" id="linkedin">Linkedin</a>
         </div>
         <div>
           <i class="fas fa-envelope"></i>
           Email me at
-          <a
-            target="_blank"
-            class="custom-link"
-            href="mailto: liamisrael200@gmail.com"
-            >liamisrael200@gmail.com</a
-          >
+          <a target="_blank" class="custom-link" id="email"></a>
         </div>
       </div>
       <hr />
-      <p>Copyright &copy; 2024 <em>Liam Israel</em>. All rights reserved.</p>
+      <p>Copyright &copy; 2024 <em id="name"></em>. All rights reserved.</p>
     </footer>
 
-    <script>
+    <script type="module">
+      // Adding profile data in
+      fetch("assets/profile.json")
+        .then((r) => r.json())
+        .then((profile_json) => {
+          document.getElementById("name").innerHTML = profile_json.name;
+          document.getElementById("email").innerHTML = profile_json.email;
+          document.getElementById(
+            "email"
+          ).href = `mailto: ${profile_json.email}`;
+          document.getElementById("linkedin").href = profile_json.linkedin;
+          document.getElementById("github").href = profile_json.github;
+        })
+        .catch((e) => {
+          console.error("Could not load profile directory");
+        });
+
       // Getting URL params and determining what to load
       const urlParams = new URLSearchParams(window.location.search);
       const page = urlParams.get("page");
 
+      let markdown = await fetch("assets/pages.json")
+        .then((r) => r.json())
+        .then((articles_json) => {
+          return articles_json;
+        })
+        .catch((e) => {
+          console.error("Failed to load article directory");
+        });
+
       // Handling cases
       if (page === null || page === "home") {
-        load_content("home.md");
-      } else if (page === "aboutMe") {
-        load_content("about-me.md");
+        load_content(markdown.home.src);
+      } else if (page === "about_me") {
+        load_content(markdown.about_me.src);
       } else if (page == "articles") {
         const article_name = urlParams.get("article");
         if (article_name == null) {
-          load_content("articles.md");
+          load_content(markdown.article_select.src);
+          populate_selection_list(markdown);
         } else {
-          load_content(`articles/${article_name}`);
+          load_content(markdown.articles[article_name].src);
         }
       }
 
-      function load_content(content) {
-        fetch("assets/" + content)
+      // Loads content from some URL
+      function load_content(url) {
+        fetch(url)
           .then((r) => r.text())
           .then((text) => {
             document.getElementById("content").innerHTML = marked.parse(text);
             // Updating syntax highlighting
             hljs.highlightAll();
           });
+      }
+
+      // Fills up select felids in selection lists
+      function populate_selection_list(markdown) {
+        document.getElementById("list-mask").style = "display: block";
+
+        const featured_list = document.getElementById("featured-list");
+        const regular_select_list = document.getElementById(
+          "regular-select-list"
+        );
+        markdown.featured.forEach((name) => {
+          let data = markdown.articles[name];
+          const li = document.createElement("li");
+
+          li.innerHTML = name;
+          li.setAttribute(
+            "onclick",
+            `window.location.href = '?page=articles&article=${name}';`
+          );
+          featured_list.appendChild(li);
+        });
+
+        Object.entries(markdown.articles).forEach(([name, data]) => {
+          const li = document.createElement("li");
+          li.innerHTML = name;
+          li.setAttribute(
+            "onclick",
+            `window.location.href = '?page=articles&article=${name}';`
+          );
+          regular_select_list.appendChild(li);
+        });
       }
     </script>
   </body>

@@ -1,167 +1,188 @@
 /* CSS Constants */
 :root {
-    /* Basic Styling*/
-    --primary-color: #1c1c4e;
-    --secondary-color: #272739;
-    --transition-color: #ab6a6a55;
-    --accent-color: #ab6a6a;
-    --base-opacity: 0.95;
+  /* Basic Styling*/
+  --primary-color: #1c1c4e;
+  --secondary-color: #272739;
+  --transition-color: #ab6a6a55;
+  --accent-color: #ab6a6a;
+  --base-opacity: 0.95;
 
-    /* Link Styling */
-    --link-color: aqua;
-    --link-hover-color: rgb(0, 219, 219);
-    --link-visited-color: rgb(132, 77, 234);
+  /* Link Styling */
+  --link-color: aqua;
+  --link-hover-color: rgb(0, 219, 219);
+  --link-visited-color: rgb(132, 77, 234);
+
+  --border-radius-1: 10px;
+
+  --box-shadow-1: 1px 2px 20px var(--accent-color);
+  --box-shadow-2: 1px 2px 20px var(--secondary-color);
 }
 
 /*
 Basic body styling
 */
 body {
-    /* Removing side scroll */
-    overflow-x: hidden;
-    max-width: 100%;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  /* Removing side scroll */
+  overflow-x: hidden;
+  max-width: 100%;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
+  /* Background of page */
+  background-color: var(--primary-color);
+  opacity: var(--base-opacity);
 
-    /* Background of page */
-    background-color: var(--primary-color);
-    opacity: var(--base-opacity);
-    background:
-        linear-gradient(135deg, var(--transition-color) 25%, transparent 25%) -16px 0/ 32px 32px,
-        linear-gradient(225deg, var(--accent-color) 25%, transparent 25%) -16px 0/ 32px 32px,
-        linear-gradient(315deg, var(--transition-color) 25%, transparent 25%) 0px 0/ 32px 32px,
-        linear-gradient(45deg, var(--accent-color) 25%, var(--primary-color)25%) 0px 0/ 32px 32px;
+  background: linear-gradient(
+        135deg,
+        var(--transition-color) 25%,
+        transparent 25%
+      ) -16px 0/ 32px 32px,
+    linear-gradient(225deg, var(--accent-color) 25%, transparent 25%) -16px 0/
+      32px 32px,
+    linear-gradient(315deg, var(--transition-color) 25%, transparent 25%) 0px 0/
+      32px 32px,
+    linear-gradient(45deg, var(--accent-color) 25%, var(--primary-color) 25%)
+      0px 0/ 32px 32px;
 
-    /*  Global Styles */
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
+  /*  Global Styles */
+  font-family: "Courier New", Courier, monospace;
+  color: white;
 }
 
 .vertical-line {
-    width: 1px;
-    background-color: white;
-    height: 70%;
+  width: 1px;
+  background-color: white;
+  height: 70%;
 }
 
 /*
 Navbar and Hero Styling
 */
 .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    gap: 1vw;
-    padding-top: 1.5vw;
-    padding-bottom: 0.5vw;
-    
-    /* Hero Background */
-    background-color: var(--primary-color);
-    background-image:
-        repeating-radial-gradient(circle at 0 0, transparent 0, var(--primary-color) 40px),
-        repeating-linear-gradient(var(--transition-color), var(--accent-color));
+  gap: 1vw;
+  padding-top: 1.5vw;
+  padding-bottom: 0.5vw;
+
+  /* Hero Background */
+  background-color: var(--primary-color);
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      var(--primary-color) 40px
+    ),
+    repeating-linear-gradient(var(--transition-color), var(--accent-color));
 }
 
 .hero h3 {
-    font-size: xx-large;
-    font-weight: bold;
-    padding: 0;
-    margin: 0;
+  font-size: xx-large;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
 }
 
 .hero p {
-    background-color: var(--transition-color);
-    font-size: large;
+  background-color: var(--transition-color);
+  font-size: large;
 }
 
 .navbar {
-    box-shadow: 1px 2px 20px var(--accent-color);
-    width: 100%;
-    background-color: var(--primary-color);
-    height: 5vh;
-    opacity: var(--base-opacity);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 5%;
+  box-shadow: var(--box-shadow-1);
+  width: 100%;
+  background-color: var(--primary-color);
+  height: 5vh;
+  opacity: var(--base-opacity);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
 }
 
 .navbar a {
-    font-size: x-large;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
+  font-size: x-large;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.main-document {
+  margin: 3vw 5vw 3vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /*
 Article and Markup Styling
 */
 .content {
-    border-radius: 10px;
-    box-shadow: 1px 2px 20px var(--accent-color);
-    padding: 0.5vw 4vw 2vw;
-    margin: 3vw 5vw 3vw;
-    background-color: var(--secondary-color);
+  border-radius: var(--border-radius-1);
+  box-shadow: var(--box-shadow-1);
+  padding: 0.5vw 4vw 2vw;
+  background-color: var(--secondary-color);
 }
 
 .content hr {
-    width: 100%;
-    padding: 0;
-    margin: 0;
+  color: white;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .content pre {
-    width: 95%;
+  width: 95%;
 }
 
-.content blockquote p::before{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 4px;
-    border-radius: 8px;
-    background: var(--accent-color);
-    }
+.content blockquote p::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  border-radius: 8px;
+  background: var(--accent-color);
+}
 .content blockquote {
-    margin-left: 10px;
-    padding:.4em .4em .4em 1em;
-    position: relative;
+  margin-left: 10px;
+  padding: 0.4em 0.4em 0.4em 1em;
+  position: relative;
 }
 
 /*
 Footer stylings
 */
 footer {
-    margin-top: auto;
-    background-color: var(--primary-color);
-    padding-top: 5vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-top: auto;
+  background-color: var(--primary-color);
+  padding-top: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 footer hr {
-    height: 1px;
-    width: 60%;
-    margin-top: 2%;
-    margin-bottom: 1%;
-    background-color: white;
+  height: 1px;
+  width: 60%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  background-color: white;
 }
 
 .footer-cards {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5%;
 }
 
 /*
@@ -169,21 +190,65 @@ Link Styling
 */
 .custom-link,
 .content a {
-    color: var(--link-color);
-    font-style: italic;
+  color: var(--link-color);
+  font-style: italic;
 }
 
 .custom-link:visited,
 .content a {
-    color: var(--link-visited-color);
+  color: var(--link-visited-color);
 }
 
 .custom-link:hover,
 .content a {
-    color: var(--link-hover-color);
+  color: var(--link-hover-color);
 }
 
 .custom-link:active,
 .content a {
-    color: var(--link-color);
+  color: var(--link-color);
+}
+
+/* Selection box styling */
+.article-list {
+  padding: 0.5vw 4vw 2vw;
+  background-color: #ab6a6a;
+  border-radius: var(--border-radius-1);
+  opacity: var(--base-opacity);
+}
+
+.article-list .selection-list-header {
+  background-color: var(--primary-color);
+  padding: 2% 5% 1%;
+  border-radius: var(--border-radius-1);
+  box-shadow: var(--box-shadow-2);
+  opacity: var(--base-opacity);
+}
+
+.article-list .selection-list-header hr {
+  height: 1px;
+  background-color: white;
+  color: white;
+  opacity: var(--base-opacity);
+}
+
+.article-list .selection-list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  justify-content: center;
+  padding: 0;
+}
+
+.article-list .selection-list li {
+  font-size: large;
+  font-weight: bold;
+  background-color: white;
+  color: var(--secondary-color);
+  padding: 2% 5% 1%;
+  border-radius: var(--border-radius-1);
+  box-shadow: var(--box-shadow-2);
+  cursor: pointer;
+  opacity: var(--base-opacity);
 }
