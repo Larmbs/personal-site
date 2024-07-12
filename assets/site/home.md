@@ -7,7 +7,7 @@
 ---
 
 You can take a look here at the articles Ive written.
-> I write a variety of pieces including: low-level concepts🖥️, algorithm implementations📈, machine learning🤖, computer graphics🎨, web development🌐, and networking🌍.
+> I write a variety of pieces including: low-level concepts 🖥️, algorithm implementations 📈, machine learning 🤖, computer graphics 🎨, web development🌐, and networking 🌍.
 
 [Here is a link to that page](?page=articles)
 
