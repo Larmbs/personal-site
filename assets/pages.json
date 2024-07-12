@@ -10,16 +10,24 @@
   },
   "articles": {
     "My Machine Learning Env": {
-      "src": "assets/text/ml/machine-learning-env.md"
+      "src": "assets/articles/machine-learning-env.md",
+      "type": "ML",
+      "time_added": "May 22, 2024"
     },
     "Neural Network Guide": {
-      "src": "assets/text/ml/neural-network-guide.md"
+      "src": "assets/articles/neural-network-guide.md",
+      "type": "ML",
+      "time_added": "May 22, 2024"
     },
     "Neural Network Layers": {
-      "src": "assets/text/ml/neural-network-layers.md"
+      "src": "assets/articles/neural-network-layers.md",
+      "type": "ML",
+      "time_added": "May 22, 2024"
     },
     "Neural Network Optimizers": {
-      "src": "assets/text/ml/neural-network-optimizers.md"
+      "src": "assets/articles/neural-network-optimizers.md",
+      "type": "ML",
+      "time_added": "May 22, 2024"
     }
   },
   "featured": ["My Machine Learning Env", "Neural Network Guide"]

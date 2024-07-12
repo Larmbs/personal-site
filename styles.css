@@ -15,7 +15,7 @@
   --border-radius-1: 10px;
 
   --box-shadow-1: 1px 2px 20px var(--accent-color);
-  --box-shadow-2: 1px 2px 20px var(--secondary-color);
+  --box-shadow-2: 1px 2px 25px var(--secondary-color);
 }
 
 /*
@@ -103,6 +103,9 @@ Navbar and Hero Styling
   align-items: center;
   justify-content: center;
   gap: 5%;
+  border: 0;
+  border-bottom: 2px;
+  border-style: solid;
 }
 
 .navbar a {
@@ -117,6 +120,9 @@ Navbar and Hero Styling
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background-color: #ab6a6a;
+  border-radius: var(--border-radius-1);
+  opacity: var(--base-opacity);
 }
 
 /*
@@ -127,6 +133,8 @@ Article and Markup Styling
   box-shadow: var(--box-shadow-1);
   padding: 0.5vw 4vw 2vw;
   background-color: var(--secondary-color);
+  border-color: var(--accent-color);
+  border-style: solid;
 }
 
 .content hr {
@@ -212,17 +220,17 @@ Link Styling
 /* Selection box styling */
 .article-list {
   padding: 0.5vw 4vw 2vw;
-  background-color: #ab6a6a;
-  border-radius: var(--border-radius-1);
-  opacity: var(--base-opacity);
 }
 
 .article-list .selection-list-header {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   padding: 2% 5% 1%;
   border-radius: var(--border-radius-1);
   box-shadow: var(--box-shadow-2);
   opacity: var(--base-opacity);
+  border-color: var(--accent-color);
+  border-width: 2px;
+  border-style: solid;
 }
 
 .article-list .selection-list-header hr {
@@ -242,13 +250,41 @@ Link Styling
 }
 
 .article-list .selection-list li {
-  font-size: large;
-  font-weight: bold;
-  background-color: white;
+  /* General text styling */
   color: var(--secondary-color);
-  padding: 2% 5% 1%;
+
+  /* Border styling */
+  border-color: var(--primary-color);
+  border-width: 3px;
+  border-style: solid;
   border-radius: var(--border-radius-1);
+
+  /* General looks */
+  background-color: #ffffff;
+  padding: 2% 5% 1%;
   box-shadow: var(--box-shadow-2);
   cursor: pointer;
   opacity: var(--base-opacity);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.article-list .selection-list li hr {
+  height: 1px;
+  background-color: var(--primary-color);
+  width: 100%;
+}
+.article-list .selection-list li div .tag {
+  float: left;
+  font-weight: bold;
+}
+
+.article-list .selection-list li div .date {
+  float: right;
+  font-weight: 400;
+}
+.article-list .selection-list li h4 {
+  padding: 5px 5px 5px;
+  margin: 0;
 }

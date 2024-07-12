@@ -25,7 +25,7 @@
 
   <body>
     <!-- Hero element -->
-    <div class="hero">
+    <div class="hero" style="display: none;">
       <h3>[Personal Site]</h3>
       <p>A place to share and share.</p>
     </div>
@@ -48,13 +48,13 @@
       <div id="list-mask" style="display: none">
         <div class="article-list">
           <h2 class="selection-list-header">
-            Featured
+            Featured &#x1F31F;:
             <hr />
           </h2>
           <!-- Featured items go here -->
           <ol id="featured-list" class="selection-list"></ol>
           <h2 class="selection-list-header">
-            Others you might like
+            All &#x1F4DA;:
             <hr />
           </h2>
           <!-- Featured items go here -->
@@ -150,26 +150,48 @@
           "regular-select-list"
         );
         markdown.featured.forEach((name) => {
-          let data = markdown.articles[name];
-          const li = document.createElement("li");
-
-          li.innerHTML = name;
-          li.setAttribute(
-            "onclick",
-            `window.location.href = '?page=articles&article=${name}';`
-          );
-          featured_list.appendChild(li);
+          featured_list.appendChild(create_item(name, markdown.articles[name]));
         });
 
         Object.entries(markdown.articles).forEach(([name, data]) => {
+          
+          regular_select_list.appendChild(create_item(name, data));
+        });
+
+        function create_item(name, data) {
+          // Creating selection box tag
+          const tag = document.createElement("span");
+          tag.className = "tag";
+          tag.innerHTML = data.type;
+
+          // Creating selection box date
+          const date = document.createElement("span");
+          date.className = "date";
+          date.innerHTML = `~${data.time_added}~`;
+
+          // Putting it into a meta element
+          const meta_data = document.createElement("div");
+          meta_data.appendChild(tag);
+          meta_data.appendChild(date);
+
+          // Adding a hr element
+          const hr = document.createElement("hr");
+
+          // Creating a content box
+          const content = document.createElement("h4");
+          content.innerHTML = name;
+
+          // Putting it all into a list item, clickable
           const li = document.createElement("li");
-          li.innerHTML = name;
+          li.appendChild(meta_data);
+          li.appendChild(hr);
+          li.appendChild(content);
           li.setAttribute(
             "onclick",
             `window.location.href = '?page=articles&article=${name}';`
           );
-          regular_select_list.appendChild(li);
-        });
+          return li;
+        }
       }
     </script>
   </body>
