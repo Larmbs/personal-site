@@ -1,7 +1,7 @@
 # Articles
 ---
-> Here is a selection of articles I've written on a variety of things. You can find crates, tutorials, guides, and projects here.
+> Select which ever article interests you. I write a variety of pieces including: low-level concepts🖥️, algorithm implementations📈, machine learning🤖, computer graphics🎨, web development🌐, and networking🌍.
 
-todo!
+> These subjects interest me the most and I enjoy writing these, so take a look and maybe you'll find what your looking for.
 
 ---
