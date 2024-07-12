@@ -88,7 +88,7 @@
       <hr />
       <p>
         Copyright &copy; 2024 <em id="name"></em>. All rights reserved.
-        <a id="site-repo"><i class="fab fa-github"></i></a>
+        <a target="_blank" id="site-repo"><i class="fab fa-github"></i></a>
       </p>
     </footer>
 
@@ -104,7 +104,7 @@
           ).href = `mailto: ${profile_json.email}`;
           document.getElementById("linkedin").href = profile_json.linkedin;
           document.getElementById("github").href = profile_json.github;
-          document.getElementById("site-repo").href = profile_json.site_repo
+          document.getElementById("site-repo").href = profile_json.site_repo;
         })
         .catch((e) => {
           console.error("Could not load profile directory");
