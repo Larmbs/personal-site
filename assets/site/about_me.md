@@ -1,5 +1,5 @@
 # About Me
 ---
-todo!
+Hi, im Liam 
 
 ---

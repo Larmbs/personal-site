@@ -41,13 +41,9 @@
     </nav>
     <!-- Main part of page -->
     <div class="main-document">
-      <div class="article-info" style="display: none;" id="info-mask">
-        <span class="tags" id="article-tags">
-          Tags:
-        </span>
-        <span class="date" id="article-date">
-          Created: 
-        </span>
+      <div class="article-info" style="display: none" id="info-mask">
+        <span class="tags" id="article-tags"> Tags: </span>
+        <span class="date" id="article-date"> Created: </span>
       </div>
       <div class="content" id="content">
         <!--Article will go here-->
@@ -90,7 +86,10 @@
         </div>
       </div>
       <hr />
-      <p>Copyright &copy; 2024 <em id="name"></em>. All rights reserved.</p>
+      <p>
+        Copyright &copy; 2024 <em id="name"></em>. All rights reserved.
+        <a id="site-repo"><i class="fab fa-github"></i></a>
+      </p>
     </footer>
 
     <script type="module">
@@ -105,6 +104,7 @@
           ).href = `mailto: ${profile_json.email}`;
           document.getElementById("linkedin").href = profile_json.linkedin;
           document.getElementById("github").href = profile_json.github;
+          document.getElementById("site-repo").href = profile_json.site_repo
         })
         .catch((e) => {
           console.error("Could not load profile directory");
@@ -208,9 +208,15 @@
 
       // Fills out article info section
       function populate_article_info(article) {
-        document.getElementById("info-mask").style.setProperty("display", "block")
-        document.getElementById("article-tags").innerHTML = format_tags(article.tags);
-        document.getElementById("article-date").innerHTML = `Created: ${article.time_added}`;
+        document
+          .getElementById("info-mask")
+          .style.setProperty("display", "block");
+        document.getElementById("article-tags").innerHTML = format_tags(
+          article.tags
+        );
+        document.getElementById(
+          "article-date"
+        ).innerHTML = `Created: ${article.time_added}`;
       }
 
       function format_tags(tags) {
@@ -219,7 +225,7 @@
         }
         let header = "Tags:";
         if (tags.length == 1) {
-          header = "Tag:"
+          header = "Tag:";
         }
         return `${header} ${tags.join(", ")}`;
       }
