@@ -291,3 +291,20 @@ Link Styling
   padding: 5px 5px 5px;
   margin: 0;
 }
+
+/*
+Article info section
+*/
+
+.article-info {
+  padding: 1.5vw 1vw 0vw;
+  margin: 0;
+}
+
+.article-info .tags {
+  float: left;
+}
+
+.article-info .date {
+  float: right;
+}

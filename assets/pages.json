@@ -11,24 +11,43 @@
   "articles": {
     "My Machine Learning Env": {
       "src": "assets/articles/machine-learning-env.md",
-      "type": "ML",
+      "tags": ["ML"],
+      "type": "file",
       "time_added": "May 22, 2024"
     },
     "Neural Network Guide": {
       "src": "assets/articles/neural-network-guide.md",
-      "type": "ML",
+      "tags": ["ML"],
+      "type": "file",
       "time_added": "May 22, 2024"
     },
     "Neural Network Layers": {
       "src": "assets/articles/neural-network-layers.md",
-      "type": "ML",
+      "tags": ["ML"],
+      "type": "file",
       "time_added": "May 22, 2024"
     },
     "Neural Network Optimizers": {
       "src": "assets/articles/neural-network-optimizers.md",
-      "type": "ML",
+      "tags": ["ML"],
+      "type": "file",
       "time_added": "May 22, 2024"
+    },
+    "Sand Engine": {
+      "src": "https://raw.githubusercontent.com/Larmbs/sand-engine/master/README.md",
+      "tags": ["Physics", "Graphics"],
+      "type": "github",
+      "time_added": "July 12, 2024"
+    },
+    "CPU V3": {
+      "src": "https://raw.githubusercontent.com/Larmbs/sand-engine/master/README.md",
+      "tags": ["Low-Level"],
+      "type": "github",
+      "time_added": "July 12, 2024"
     }
   },
-  "featured": ["My Machine Learning Env", "Neural Network Guide"]
+  "featured": [
+    "Sand Engine",
+    "Neural Network Guide"
+  ]
 }

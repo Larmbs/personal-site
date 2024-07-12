@@ -25,7 +25,7 @@
 
   <body>
     <!-- Hero element -->
-    <div class="hero" style="display: none;">
+    <div class="hero" style="display: none">
       <h3>[Personal Site]</h3>
       <p>A place to share and share.</p>
     </div>
@@ -41,6 +41,14 @@
     </nav>
     <!-- Main part of page -->
     <div class="main-document">
+      <div class="article-info" style="display: none;" id="info-mask">
+        <span class="tags" id="article-tags">
+          Tags:
+        </span>
+        <span class="date" id="article-date">
+          Created: 
+        </span>
+      </div>
       <div class="content" id="content">
         <!--Article will go here-->
       </div>
@@ -127,6 +135,7 @@
           populate_selection_list(markdown);
         } else {
           load_content(markdown.articles[article_name].src);
+          populate_article_info(markdown.articles[article_name]);
         }
       }
 
@@ -153,16 +162,19 @@
           featured_list.appendChild(create_item(name, markdown.articles[name]));
         });
 
-        Object.entries(markdown.articles).forEach(([name, data]) => {
-          
-          regular_select_list.appendChild(create_item(name, data));
-        });
+        Object.entries(markdown.articles)
+          .sort((a, b) => {
+            return new Date(b[1].time_added) - new Date(a[1].time_added);
+          })
+          .forEach(([name, data]) => {
+            regular_select_list.appendChild(create_item(name, data));
+          });
 
         function create_item(name, data) {
           // Creating selection box tag
           const tag = document.createElement("span");
           tag.className = "tag";
-          tag.innerHTML = data.type;
+          tag.innerHTML = `Tag: ${data.tags[0]}`;
 
           // Creating selection box date
           const date = document.createElement("span");
@@ -192,6 +204,24 @@
           );
           return li;
         }
+      }
+
+      // Fills out article info section
+      function populate_article_info(article) {
+        document.getElementById("info-mask").style.setProperty("display", "block")
+        document.getElementById("article-tags").innerHTML = format_tags(article.tags);
+        document.getElementById("article-date").innerHTML = `Created: ${article.time_added}`;
+      }
+
+      function format_tags(tags) {
+        if (tags.length == 0) {
+          return "Tags: None";
+        }
+        let header = "Tags:";
+        if (tags.length == 1) {
+          header = "Tag:"
+        }
+        return `${header} ${tags.join(", ")}`;
       }
     </script>
   </body>
