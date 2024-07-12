@@ -116,7 +116,7 @@ Navbar and Hero Styling
 }
 
 .main-document {
-  margin: 3vw 5vw 3vw;
+  margin: 3vw 20vw 3vw;
   display: flex;
   flex-direction: column;
   gap: 1vh;
