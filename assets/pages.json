@@ -40,7 +40,7 @@
       "time_added": "July 12, 2024"
     },
     "CPU V3": {
-      "src": "https://raw.githubusercontent.com/Larmbs/sand-engine/master/README.md",
+      "src": "https://raw.githubusercontent.com/Larmbs/cpu-v3/master/README.md",
       "tags": ["Low-Level"],
       "type": "github",
       "time_added": "July 12, 2024"
@@ -48,6 +48,7 @@
   },
   "featured": [
     "Sand Engine",
+    "CPU V3",
     "Neural Network Guide"
   ]
 }
