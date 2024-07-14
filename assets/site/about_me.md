@@ -1,5 +1,5 @@
 # About Me
 ---
-Hi, im Liam 
+Hey this is my about me section, not done yet.
 
 ---
