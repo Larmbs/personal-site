@@ -2,7 +2,7 @@ async function load_page_content() {
     const urlParams = new URLSearchParams(window.location.search);
     const page = urlParams.get("page");
 
-    let markdown = await fetch("/assets/pages.json")
+    let markdown = await fetch("assets/pages.json")
         .then((r) => r.json())
         .then((articles_json) => {
             return articles_json;

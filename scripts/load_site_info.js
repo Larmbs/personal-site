@@ -1,7 +1,7 @@
 // Loads dynamic site info into appropriate spots
 
 document.addEventListener("DOMContentLoaded", async function () {
-  fetch("/assets/profile.json")
+  fetch("assets/profile.json")
     .then((r) => r.json())
     .then((profile_json) => {
       var utc = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
