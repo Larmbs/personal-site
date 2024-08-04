@@ -1,48 +1,55 @@
+#navbar {
+  width: 100%;
+  position: sticky;
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+  top: -10vh;
+  z-index: 20;
+}
+
 .navbar {
-    box-shadow: var(--box-shadow-1);
-    width: 100%;
-    background-color: var(--primary-color);
-    height: auto;
-    opacity: var(--base-opacity);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: 0;
-    border-bottom: 2px solid white;
-    padding-bottom: 1%;;
-  }
+  box-shadow: var(--box-shadow-1);
+  width: 100%;
+  background-color: var(--primary-color);
+  height: 10vh;
+  opacity: var(--base-opacity);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 0;
+  border-bottom: 2px solid white;
+  padding-bottom: 1%;
+}
 
-  .navbar .navbtns {
-    margin-left: auto;
-    margin-right: 5%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    line-height: 0;
-    width: 80%;
-    margin-top: auto;
-  }
- 
-  .navbar .navbtns a {
-    height: 100%;
-    border-left: 2px solid white;
-    border-right: 2px solid white;
+.navbar .navbtns {
+  margin-left: auto;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  width: 80%;
+  margin-top: auto;
+}
 
-    margin-top: auto;
-    padding: 0 8%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-  }
+.navbar .navbtns a {
+  height: 100%;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  margin-top: auto;
+  padding: 0 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
 
-  .navbar a h3 {
-    font-weight: bold;
-    font-size: 2vw;
-    color: var(--base-color);
-  }
+.navbar a h3 {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: var(--base-color);
+}
 
-  .navbar .navbtns :hover {
-    background-color: rgb(169, 169, 169);
-  }
+.navbar .navbtns :hover {
+  background-color: rgb(169, 169, 169);
+}

@@ -4,18 +4,32 @@ document.addEventListener("DOMContentLoaded", async function () {
   fetch("/assets/profile.json")
     .then((r) => r.json())
     .then((profile_json) => {
-        var utc = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+      var utc = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
 
-        document.getElementById("site-name").innerHTML = profile_json.site_name;
-        //document.getElementById("date-today").innerHTML = utc;
-        document.getElementById("name").innerHTML = profile_json.name;
-        document.getElementById("email").innerHTML = profile_json.email;
-        document.getElementById("email").href = `mailto: ${profile_json.email}`;
-        document.getElementById("linkedin").href = profile_json.linkedin;
-        document.getElementById("github").href = profile_json.github;
-        document.getElementById("site-repo").href = profile_json.site_repo;
+      replace_inner_html("site-name", profile_json.site_name);
+      replace_inner_html("name", profile_json.name);
+
+      replace_inner_html("email", profile_json.email);
+      replace_href("email", `mailto: ${profile_json.email}`);
+      replace_href("github", profile_json.github)
+      replace_href("linkedin", profile_json.linkedin)
+      replace_href("site-repo", profile_json.site_repo)
+
+      replace_inner_html("date-today", utc)
     })
     .catch((e) => {
       console.error("Could not load profile directory | Error: " + e);
     });
 });
+
+function replace_inner_html(id, val) {
+  document.querySelectorAll("#" + id).forEach((elem) => {
+    elem.innerHTML = val;
+  });
+}
+
+function replace_href(id, val) {
+  document.querySelectorAll("#" + id).forEach((elem) => {
+    elem.href = val;
+  });
+}
