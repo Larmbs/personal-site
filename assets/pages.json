@@ -1,34 +1,34 @@
 {
   "home": {
-    "src": "assets/site/home.md"
+    "src": "/assets/site/home.md"
   },
   "article_select": {
-    "src": "assets/site/article_select.md"
+    "src": "/assets/site/article_select.md"
   },
   "about_me": {
-    "src": "assets/site/about_me.md"
+    "src": "/assets/site/about_me.md"
   },
   "articles": {
     "My Machine Learning Env": {
-      "src": "assets/articles/machine-learning-env.md",
+      "src": "/assets/articles/machine-learning-env.md",
       "tags": ["ML"],
       "type": "file",
       "time_added": "May 22, 2024"
     },
     "Neural Network Guide": {
-      "src": "assets/articles/neural-network-guide.md",
+      "src": "/assets/articles/neural-network-guide.md",
       "tags": ["ML"],
       "type": "file",
       "time_added": "May 22, 2024"
     },
     "Neural Network Layers": {
-      "src": "assets/articles/neural-network-layers.md",
+      "src": "/assets/articles/neural-network-layers.md",
       "tags": ["ML"],
       "type": "file",
       "time_added": "May 22, 2024"
     },
     "Neural Network Optimizers": {
-      "src": "assets/articles/neural-network-optimizers.md",
+      "src": "/assets/articles/neural-network-optimizers.md",
       "tags": ["ML"],
       "type": "file",
       "time_added": "May 22, 2024"

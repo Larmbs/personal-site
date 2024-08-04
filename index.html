@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Liam Israel | [Personal Site]</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title id="site-name"></title>
+    <link rel="stylesheet" href="/styles/main.css" />
 
     <!-- Icons -->
     <link
@@ -21,214 +21,76 @@
     />
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/go.min.js"></script>
+    <script src="/scripts/load_elements.js"></script>
+    <script src="/scripts/load_site_info.js"></script>
+    <script src="/scripts/load_page.js"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module" src="/scripts/three_js_home.js"></script>
   </head>
 
   <body>
-    <!-- Hero element -->
-    <div class="hero" style="display: none">
-      <h3>[Personal Site]</h3>
-      <p>A place to share and share.</p>
-    </div>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="vertical-line"></div>
-      <a href="?page=home">Home</a>
-      <div class="vertical-line"></div>
-      <a href="?page=articles">Articles</a>
-      <div class="vertical-line"></div>
-      <a href="?page=about_me">About Me</a>
-      <div class="vertical-line"></div>
-    </nav>
-    <!-- Main part of page -->
-    <div class="main-document">
-      <div class="article-info" style="display: none" id="info-mask">
-        <span class="tags" id="article-tags"> Tags: </span>
-        <span class="date" id="article-date"> Created: </span>
-      </div>
-      <div class="content" id="content">
-        <!--Article will go here-->
-      </div>
-      <!-- List of articles and featured ones go here-->
-      <div id="list-mask" style="display: none">
-        <div class="article-list">
-          <h2 class="selection-list-header">
-            Featured &#x1F31F;:
-            <hr />
-          </h2>
-          <!-- Featured items go here -->
-          <ol id="featured-list" class="selection-list"></ol>
-          <h2 class="selection-list-header">
-            All &#x1F4DA;:
-            <hr />
-          </h2>
-          <!-- Featured items go here -->
-          <ul id="regular-select-list" class="selection-list"></ul>
-        </div>
-      </div>
-    </div>
-    <footer>
-      <!--Footer cards-->
-      <div class="footer-cards">
-        <div>
+    <div id="hero"></div>
+    <div id="navbar"></div>
+    <div class="cube">
+      <div class="cube-text">
+        <p>
+          Take a look around, ive written a number a things on subjects that
+          interests me and you should really take a look. 
+        </p>
+        <div class="socials">
+          Find Me On
           <i class="fab fa-github"></i>
-          Find Larmbs on
           <a target="_blank" class="custom-link" id="github">GitHub</a>
-        </div>
-        <div>
+          , and 
           <i class="fab fa-linkedin"></i>
-          Find me on
           <a target="_blank" class="custom-link" id="linkedin">Linkedin</a>
         </div>
-        <div>
-          <i class="fas fa-envelope"></i>
-          Email me at
-          <a target="_blank" class="custom-link" id="email"></a>
+      </div>
+
+      <div id="container"></div>
+    </div>
+
+    <!-- Main part of page -->
+    <div class="main-content">
+      <div class="main-document">
+        <div class="article-info" style="display: none" id="info-mask">
+          <span class="tags" id="article-tags"> Tags: </span>
+          <span class="date" id="article-date"> Created: </span>
+        </div>
+
+        <div class="content" id="content">
+          <!--Article will go here-->
+        </div>
+
+        <!-- List of articles and featured ones go here-->
+        <div id="list-mask" style="display: none">
+          <div class="article-list">
+            <h2 class="selection-list-header">
+              Featured &#x1F31F;:
+              <hr />
+            </h2>
+            <!-- Featured items go here -->
+            <ol id="featured-list" class="selection-list"></ol>
+            <h2 class="selection-list-header">
+              All &#x1F4DA;:
+              <hr />
+            </h2>
+            <!-- Featured items go here -->
+            <ul id="regular-select-list" class="selection-list"></ul>
+          </div>
         </div>
       </div>
-      <hr />
-      <p>
-        Copyright &copy; 2024 <em id="name"></em>. All rights reserved.
-        <a target="_blank" id="site-repo"><i class="fab fa-github"></i></a>
-      </p>
-    </footer>
+    </div>
 
-    <script type="module">
-      // Adding profile data in
-      fetch("assets/profile.json")
-        .then((r) => r.json())
-        .then((profile_json) => {
-          document.getElementById("name").innerHTML = profile_json.name;
-          document.getElementById("email").innerHTML = profile_json.email;
-          document.getElementById(
-            "email"
-          ).href = `mailto: ${profile_json.email}`;
-          document.getElementById("linkedin").href = profile_json.linkedin;
-          document.getElementById("github").href = profile_json.github;
-          document.getElementById("site-repo").href = profile_json.site_repo;
-        })
-        .catch((e) => {
-          console.error("Could not load profile directory");
-        });
-
-      // Getting URL params and determining what to load
-      const urlParams = new URLSearchParams(window.location.search);
-      const page = urlParams.get("page");
-
-      let markdown = await fetch("assets/pages.json")
-        .then((r) => r.json())
-        .then((articles_json) => {
-          return articles_json;
-        })
-        .catch((e) => {
-          console.error("Failed to load article directory");
-        });
-
-      // Handling cases
-      if (page === null || page === "home") {
-        load_content(markdown.home.src);
-      } else if (page === "about_me") {
-        load_content(markdown.about_me.src);
-      } else if (page == "articles") {
-        const article_name = urlParams.get("article");
-        if (article_name == null) {
-          load_content(markdown.article_select.src);
-          populate_selection_list(markdown);
-        } else {
-          load_content(markdown.articles[article_name].src);
-          populate_article_info(markdown.articles[article_name]);
-        }
-      }
-
-      // Loads content from some URL
-      function load_content(url) {
-        fetch(url)
-          .then((r) => r.text())
-          .then((text) => {
-            document.getElementById("content").innerHTML = marked.parse(text);
-            // Updating syntax highlighting
-            hljs.highlightAll();
-          });
-      }
-
-      // Fills up select felids in selection lists
-      function populate_selection_list(markdown) {
-        document.getElementById("list-mask").style = "display: block";
-
-        const featured_list = document.getElementById("featured-list");
-        const regular_select_list = document.getElementById(
-          "regular-select-list"
-        );
-        markdown.featured.forEach((name) => {
-          featured_list.appendChild(create_item(name, markdown.articles[name]));
-        });
-
-        Object.entries(markdown.articles)
-          .sort((a, b) => {
-            return new Date(b[1].time_added) - new Date(a[1].time_added);
-          })
-          .forEach(([name, data]) => {
-            regular_select_list.appendChild(create_item(name, data));
-          });
-
-        function create_item(name, data) {
-          // Creating selection box tag
-          const tag = document.createElement("span");
-          tag.className = "tag";
-          tag.innerHTML = `Tag: ${data.tags[0]}`;
-
-          // Creating selection box date
-          const date = document.createElement("span");
-          date.className = "date";
-          date.innerHTML = `~${data.time_added}~`;
-
-          // Putting it into a meta element
-          const meta_data = document.createElement("div");
-          meta_data.appendChild(tag);
-          meta_data.appendChild(date);
-
-          // Adding a hr element
-          const hr = document.createElement("hr");
-
-          // Creating a content box
-          const content = document.createElement("h4");
-          content.innerHTML = name;
-
-          // Putting it all into a list item, clickable
-          const li = document.createElement("li");
-          li.appendChild(meta_data);
-          li.appendChild(hr);
-          li.appendChild(content);
-          li.setAttribute(
-            "onclick",
-            `window.location.href = '?page=articles&article=${name}';`
-          );
-          return li;
-        }
-      }
-
-      // Fills out article info section
-      function populate_article_info(article) {
-        document
-          .getElementById("info-mask")
-          .style.setProperty("display", "block");
-        document.getElementById("article-tags").innerHTML = format_tags(
-          article.tags
-        );
-        document.getElementById(
-          "article-date"
-        ).innerHTML = `Created: ${article.time_added}`;
-      }
-
-      function format_tags(tags) {
-        if (tags.length == 0) {
-          return "Tags: None";
-        }
-        let header = "Tags:";
-        if (tags.length == 1) {
-          header = "Tag:";
-        }
-        return `${header} ${tags.join(", ")}`;
-      }
-    </script>
+    <div id="footer"></div>
   </body>
 </html>

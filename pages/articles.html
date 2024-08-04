@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title id="site-name"></title>
+    <link rel="stylesheet" href="/styles/main.css" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Markdown to HTML conversion-->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/paraiso-dark.min.css"
+    />
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/go.min.js"></script>
+    <script src="/scripts/load_elements.js"></script>
+    <script src="/scripts/load_site_info.js"></script>
+    <script src="/scripts/load_page.js"></script>
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <!-- Main part of page -->
+    <div class="main-document">
+      <div class="article-info" style="display: none" id="info-mask">
+        <span class="tags" id="article-tags"> Tags: </span>
+        <span class="date" id="article-date"> Created: </span>
+      </div>
+
+      <div class="content" id="content">
+        <!--Article will go here-->
+      </div>
+
+      <!-- List of articles and featured ones go here-->
+      <div id="list-mask" style="display: none">
+        <div class="article-list">
+          <h2 class="selection-list-header">
+            Featured &#x1F31F;:
+            <hr />
+          </h2>
+          <!-- Featured items go here -->
+          <ol id="featured-list" class="selection-list"></ol>
+          <h2 class="selection-list-header">
+            All &#x1F4DA;:
+            <hr />
+          </h2>
+          <!-- Featured items go here -->
+          <ul id="regular-select-list" class="selection-list"></ul>
+        </div>
+      </div>
+    </div>
+    
+    <div id="footer"></div>
+  </body>
+</html>
