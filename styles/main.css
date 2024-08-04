@@ -36,9 +36,9 @@
 }
 .cube .cube-text {
   position: absolute;
-  margin: 10%;
+  margin: 8%;
   font-size: 1.4vw;
-  width: 30%;
+  width: 35%;
   padding: 1%;
   line-height: 1.8vw;
 }
@@ -46,6 +46,7 @@
 .cube .cube-text p {
   border: 0;
   border-bottom: 2px solid white;
+  padding-bottom: 2%;;
 }
 .cube .cube-text .socials {
   font-size: 1.2vw;
