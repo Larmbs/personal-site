@@ -85,18 +85,33 @@
 
     <div id="recent-work">
       <div class="card">
-        <h1>API Key cache</h1>
-        <p>Made a rust crate to chache api keys</p>
-      </div>
-      <div class="card">
-        <h1>IOT network</h1>
+        <h1>Rust Crates</h1>
         <p>
-          Configuration site where I can control and configure my IOT devies as
-          well as monito them
+          Many projects of mine have been shipped as crates on crates.io, the
+          Rust Communities library registry.
         </p>
+        <img src="https://crates.io/assets/cargo.png" />
+        <div class="downloads">
+          <svg
+            viewBox="0 0 14 17"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            class="_download-icon_1msd3z"
+          >
+            <path d="M1 13h12v2H1zM5 2h4v5h3l-5 4.996L2 7h3z"></path>
+          </svg>
+          16.1k+ downloads over all my crates
+        </div>
       </div>
       <div class="card">
-        <h1>Hello</h1>
+        <h1>IOT Network</h1>
+        <p>
+          Built and deployed a personal <a target="_blank" href="https://en.wikipedia.org/wiki/Internet_of_things">Internet Of Things</a> network to monitor and configure ESP32 devices.
+        </p>
+        <img src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/hub?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=40&qlt=100&fit=constrain" />
+      </div>
+      <div class="card">
+        <h1>Games</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac
           tincidunt nibh. Fusce blandit mauris quis augue molestie, id interdum
@@ -107,32 +122,30 @@
 
     <!-- Main part of page -->
     <div class="main-content">
-      <div class="main-document">
-        <div class="article-info" style="display: none" id="info-mask">
-          <span class="tags" id="article-tags"> Tags: </span>
-          <span class="date" id="article-date"> Created: </span>
-        </div>
+      <div class="article-info" style="display: none" id="info-mask">
+        <span class="tags" id="article-tags"> Tags: </span>
+        <span class="date" id="article-date"> Created: </span>
+      </div>
 
-        <div class="content" id="content">
-          <!--Article will go here-->
-        </div>
+      <div class="markdown" id="markdown">
+        <!--Article will go here-->
+      </div>
 
-        <!-- List of articles and featured ones go here-->
-        <div id="list-mask" style="display: none">
-          <div class="article-list">
-            <h2 class="selection-list-header">
-              Featured &#x1F31F;:
-              <hr />
-            </h2>
-            <!-- Featured items go here -->
-            <ol id="featured-list" class="selection-list"></ol>
-            <h2 class="selection-list-header">
-              All &#x1F4DA;:
-              <hr />
-            </h2>
-            <!-- Featured items go here -->
-            <ul id="regular-select-list" class="selection-list"></ul>
-          </div>
+      <!-- List of articles and featured ones go here-->
+      <div id="list-mask" style="display: none">
+        <div class="article-list">
+          <h2 class="selection-list-header">
+            Featured &#x1F31F;:
+            <hr />
+          </h2>
+          <!-- Featured items go here -->
+          <ol id="featured-list" class="selection-list"></ol>
+          <h2 class="selection-list-header">
+            All &#x1F4DA;:
+            <hr />
+          </h2>
+          <!-- Featured items go here -->
+          <ul id="regular-select-list" class="selection-list"></ul>
         </div>
       </div>
     </div>

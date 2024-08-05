@@ -24,7 +24,7 @@ function init() {
     const geo_solid_cube = new THREE.BoxGeometry();
     const mat_solid_cube = new THREE.MeshStandardMaterial({ color: 0xffffff });
     solid_cube_mesh = new THREE.Mesh(geo_solid_cube, mat_solid_cube);
-    scene.add(solid_cube_mesh);
+    //scene.add(solid_cube_mesh);
 
     // Creating the wire frame cube
     const geo_wire_cube = new THREE.BoxGeometry(1.15, 1.15, 1.15);
@@ -33,7 +33,7 @@ function init() {
         wireframe: true,
     });
     wire_cube_mesh = new THREE.Mesh(geo_wire_cube, mat_wire_cube);
-    scene.add(wire_cube_mesh);
+    //scene.add(wire_cube_mesh);
 
     const geo_sphere = new THREE.SphereGeometry(
         5,
@@ -75,8 +75,8 @@ function init() {
     scene.add(ambient_light);
 
     // Directional light
-    directed_light = new THREE.DirectionalLight(0xffffff, 1);
-    directed_light.position.set(5, 5, 5);
+    directed_light = new THREE.PointLight(0xffffff, 1);
+    directed_light.position.set(5, 5, 2);
     directed_light.castShadow = true; // Enable shadow casting
     directed_light.shadow.mapSize.width = 1024; // Shadow map resolution
     directed_light.shadow.mapSize.height = 1024;

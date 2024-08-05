@@ -1,156 +1,174 @@
-@import "./navbar.css";
-
-/* CSS Constants */
-
 :root {
-  /* Basic Styling*/
-  --primary-color: #000000;
-  --secondary-color: #272739;
-  --transition-color: #282b4555;
-  --accent-color: #171a3c;
-  --base-opacity: 0.95;
-  --base-color: white;
-  --test-color: rgb(37, 37, 37);
-  /* Link Styling */
-  --link-color: aqua;
-  --link-hover-color: rgb(0, 219, 219);
-  --link-visited-color: rgb(132, 77, 234);
-  --border-radius-1: 10px;
-  --box-shadow-1: 1px 2px 0px var(--accent-color);
-  --box-shadow-2: 1px 2px 25px var(--secondary-color);
+  /* Defining Page Colors */
+  --bg-primary: black;
+  --bg-secondary: rgb(37, 37, 37);
+
+  --accent-primary: rgb(47, 60, 233);
+  --accent-secondary: rgb(168, 139, 220);
+
+  --text-color-dark: white;
+  --text-color-light: black;
+
+  --hr-line-thin: 2px;
+  --hr-line-thick: 4px;
+
+  /* Setting up default page setup */
+  overflow-x: hidden;
+  min-height: 100vh;
+  color: var(--text-color-dark);
+  background-color: var(--bg-primary);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#hero {
-  display: flex;
-  background-color: black;
-  align-items: center;
-  -webkit-mask: radial-gradient(100% 100% at top, #fff 60%, #0000 61%);
-  mask: radial-gradient(220% 160% at top, #fff 60%, #0000 61%);
+/* Navbar Styling */
+#navbar {
+  width: 100%;
+  position: fixed;
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+  top: -20vh;
+  z-index: 20;
 }
+#navbar nav {
+  background-color: var(--bg-primary);
 
-#hero .hero-text {
-  mix-blend-mode: difference;
-  position: absolute;
-  margin-left: 8%;
-  margin-right: auto;
-  font-size: 1.5em;
-  width: 35%;
-  padding: 1%;
-  line-height: 1.3em;
-  color: white;
-}
+  padding-left: 10%;
+  padding-right: 10%;
 
-#hero .hero-text p {
-  margin-top: 0;
-  border-bottom: 2px solid white;
-  padding-bottom: 2%;
-}
-
-#hero .hero-text h1 {
-  margin: 0;
-  margin-bottom: 2%;
-}
-
-#hero .hero-text h2 {
-  margin: 0;
-  margin-bottom: 1%;
-}
-
-#hero .hero-text .socials {
-  font-size: 1em;
-  line-height: 1.2em;
-}
-
-#about {
-  height: 50vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  border: 0;
+  border-bottom: var(--hr-line-thin) solid var(--text-color-dark);
+}
+#navbar nav a {
+  height: 100%;
+  border-left: var(--hr-line-thin) solid white;
+  font-weight: bold;
+  font-size: 2em;
+  color: var(--base-color);
+  text-decoration: none;
+
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+#navbar nav a:last-of-type {
+  border-right: var(--hr-line-thin) solid white;
+}
+#navbar nav a:hover {
+  background-color: var(--accent-primary);
+}
+
+/* Hero Section Of Home Page*/
+#hero {
+  display: flex;
+  align-items: center;
+
+  /* Adds rounded bottom border*/
+  -webkit-mask: radial-gradient(100% 100% at top, #fff 60%, #0000 61%);
+  mask: radial-gradient(220% 160% at top, #fff 60%, #0000 61%);
+}
+#hero .hero-text {
+  position: absolute;
+  margin-left: 8%;
+  width: 35%;
+  padding: 1%;
+
+  /* Font Styling */
+  mix-blend-mode: difference; /* Makes it be the inverse of bg */
+  font-size: 1.5em;
+  padding: 1%;
+  line-height: 1.3em;
+}
+#hero .hero-text p {
+  border-bottom: var(--hr-line-thick) solid var(--text-color-dark);
+  padding-bottom: 2%;
+}
+#hero .hero-text h1|h2 {
+  margin: 0;
+  margin-bottom: 1%;
+}
+
+/* About Section of Home Page*/
+#about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  height: 50vh;
   padding: 5%;
   padding-bottom: 0;
 }
-
 #about p {
-  width: 60%;
   font-size: 1.6em;
   line-height: 1.6em;
-  border-bottom: white solid 2px;
+
+  border-bottom: var(--text-color-dark) solid var(--hr-line-thin);
+
+  width: 60%;
   padding: 1%;
   margin: 0;
   margin-left: auto;
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    right top,
-    from(rgb(255, 255, 255)),
-    to(#2445d6)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
+/* Shows Featured Projects */
 #recent-work {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
   gap: 10%;
   padding: 5%;
   height: 50vh;
-  border-bottom: var(--test-color) solid 8px;
-}
 
+  border-bottom: var(--bg-secondary) solid 8px;
+}
 #recent-work .card {
-  width: 30%;
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(127, 117, 128),
-    #ffffff
-  );
-  color: white;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  width: 30%;
+  height: 100%;
+  padding: 2%;
+
+  border: var(--hr-line-thin) solid var(--accent-secondary);
   border-radius: 5%;
-  border-color: rgb(168, 139, 220);
-  border-width: 2px;
-  border-style: solid;
-  box-shadow: 2px 2px 40px rgb(47, 60, 233);
-  padding: 1%;
-}
 
+  box-shadow: 2px 2px 40px var(--accent-primary);
+
+  background-image: linear-gradient(
+    to bottom right,
+    var(--bg-primary),
+    var(--bg-secondary)
+  );
+}
 #recent-work .card p {
-    font-size: 1.4em;
+  font-size: 1.4em;
+  text-align: center;
 }
-
-/*
-Basic body styling
-*/
-
-body {
-  /* Removing side scroll */
-  overflow-x: hidden;
-  color: white;
-  max-width: 100%;
+#recent-work .card h1 {
+  font-size: 3em;
   margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  /* Background of page */
-  background-color: black;
 }
-
-.vertical-line {
-  width: 1px;
-  background-color: var(--base-color);
-  height: 70%;
+#recent-work .card img {
+  width: 60%;
+}
+#recent-work .card .downloads {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  font-size: 1.2em;
+  height: 10%;
 }
 
 .main-content {
-  background-color: var(--test-color);
+  background-color: var(--bg-secondary);
   border-top: 20px solid black;
 }
 
@@ -167,23 +185,20 @@ body {
 Article and Markup Styling
 */
 
-.content {
+#markup {
   padding: 0.5vw 5vw 2vw;
   margin: 0;
 }
-
-.content hr {
+#markup hr {
   color: var(--base-color);
   width: 100%;
   padding: 0;
   margin: 0;
 }
-
-.content pre {
+#markup pre {
   width: 95%;
 }
-
-.content blockquote p::before {
+#markup blockquote p::before {
   content: "";
   display: block;
   position: absolute;
@@ -194,45 +209,36 @@ Article and Markup Styling
   border-radius: 8px;
   background: var(--accent-color);
 }
-
-.content blockquote {
+#markup blockquote {
   margin-left: 10px;
   padding: 0em 0.4em 0em 1em;
   position: relative;
 }
 
-/*
-Footer stylings
-*/
-
-footer {
-  margin-top: auto;
-  background-color: var(--primary-color);
-  padding-top: 5vw;
+/* Footer styling */
+#footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-footer hr {
+  margin-top: auto;
+  background-color: var(--primary-color);
+  padding-top: 5vw;
+}
+#footer hr {
   height: 1px;
   width: 60%;
   margin-top: 2%;
   margin-bottom: 1%;
   background-color: var(--base-color);
 }
-
-.footer-cards {
+#footer .footer-cards {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 5%;
 }
-
-/*
-Link Styling
-*/
 
 .custom-link,
 .content a {

@@ -34,7 +34,7 @@ function load_markdown(url) {
     fetch(url)
         .then((r) => r.text())
         .then((text) => {
-            document.getElementById("content").innerHTML = marked.parse(text);
+            document.getElementById("markdown").innerHTML = marked.parse(text);
             hljs.highlightAll();
         });
 }
@@ -87,7 +87,7 @@ function populate_selection_list(markdown) {
         li.appendChild(content);
         li.setAttribute(
             "onclick",
-            `window.location.href = '?page=articles&article=${name}';`
+            `window.location.href = 'articles.html?page=articles&article=${name}';`
         );
         return li;
     }
