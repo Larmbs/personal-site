@@ -136,6 +136,7 @@
   flex-direction: column;
   align-items: center;
 
+  position: relative;
   width: 30%;
   height: 100%;
   padding: 2%;
@@ -150,6 +151,14 @@
     var(--bg-primary),
     var(--bg-secondary)
   );
+
+  bottom: 0;
+  transition: bottom ease 1s;
+}
+#recent-work .card:hover {
+  bottom: 50px;
+  box-shadow: 2px 2px 120px var(--accent-primary);
+
 }
 #recent-work .card p {
   font-size: 1.4em;
