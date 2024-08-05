@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title id="site-name"></title>
     <link rel="stylesheet" href="styles/main.css" />
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
     <!-- Markdown to HTML conversion-->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <!-- Syntax highlighting -->
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/paraiso-dark.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/paraiso-dark.min.css"
+    />
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/go.min.js"></script>
     <script src="scripts/load_elements.js"></script>
@@ -21,25 +26,35 @@
     <script src="scripts/load_page.js"></script>
 
     <script type="importmap">
-        { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/" } }
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/"
+        }
+      }
     </script>
 
     <script type="module" src="scripts/three_js_home.js"></script>
     <script src="scripts/scroll.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="navbar"></div>
-    <div class="cube">
-        <div class="cube-text">
-            <h1>Hi, Im Liam.</h1>
-            <h2>I am an Aerospace, and CS student</h2>
-            <p>
-                who is particularly interested in computer science, math, and engineering. I share my interests in these subjects through projects and articles I create. Take a look for yourself maybe you 'll find something worth sharing.
-            </p>
-            <div class="socials">
-                Find Me On
-                <i class="fab fa-github"></i
+
+    <!-- Hero Section -->
+    <div id="hero">
+      <div class="hero-text">
+        <h1>Hi, Im Liam.</h1>
+        <h2>I am an Aerospace, and CS student</h2>
+        <p>
+          who is particularly interested in computer science, math, and
+          engineering. I share my interests in these subjects through projects
+          and articles I create. Take a look for yourself maybe you 'll find
+          something worth sharing.
+        </p>
+        <div class="socials">
+          Find Me On
+          <i class="fab fa-github"></i
           ><a target="_blank" class="custom-link" id="github">GitHub</a>, and
           <i class="fab fa-linkedin"></i
           ><a target="_blank" class="custom-link" id="linkedin">Linkedin</a>.
@@ -47,6 +62,47 @@
       </div>
 
       <div id="container"></div>
+    </div>
+
+    <!-- About Me -->
+    <div id="about">
+      <div class="img-container">
+        <img
+          src="https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/201011/20101123131216-1_0.jpg?itok=ma_P1FSF"
+        />
+      </div>
+      <p class="highlighted">
+        I am Liam Israel, a recent highschool graduate, and soon to be college
+        student. I am a recurrent open source contributor with extensive
+        experience with Rust <i class="fa-brands fa-rust"></i>, Python
+        <i class="fa-brands fa-python"></i>, and Java Script
+        <i class="fa-brands fa-js"></i>. I have a variety if interests within CS
+        including: computer graphics 🎨, system level programming 🖥️, data and
+        algorithms 📈, machine learning 🤖, web development 🌐, and socket
+        networking 🌍.
+      </p>
+    </div>
+
+    <div id="recent-work">
+      <div class="card">
+        <h1>API Key cache</h1>
+        <p>Made a rust crate to chache api keys</p>
+      </div>
+      <div class="card">
+        <h1>IOT network</h1>
+        <p>
+          Configuration site where I can control and configure my IOT devies as
+          well as monito them
+        </p>
+      </div>
+      <div class="card">
+        <h1>Hello</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac
+          tincidunt nibh. Fusce blandit mauris quis augue molestie, id interdum
+          arcu aliquet. Cras sodales libero eros, at sagittis diam
+        </p>
+      </div>
     </div>
 
     <!-- Main part of page -->
