@@ -113,4 +113,6 @@ function format_tags(tags) {
     return `${header} ${tags.join(", ")}`;
 }
 
-load_page_content();
+document.addEventListener("DOMContentLoaded", async function() {
+    load_page_content();
+});

@@ -9,6 +9,9 @@
   --text-color-dark: white;
   --text-color-light: black;
 
+  --link-active: rgb(28, 179, 255);
+  --link-used: var(--accent-primary);
+
   --hr-line-thin: 2px;
   --hr-line-thick: 4px;
 
@@ -25,7 +28,7 @@
   width: 100%;
   position: fixed;
   transition: top 0.3s; /* Transition effect when sliding down (and up) */
-  top: -20vh;
+  top: 0;
   z-index: 20;
 }
 #navbar nav {
@@ -101,7 +104,6 @@
 
   height: 50vh;
   padding: 5%;
-  padding-bottom: 0;
 }
 #about p {
   font-size: 1.6em;
@@ -124,7 +126,8 @@
 
   gap: 10%;
   padding: 5%;
-  height: 50vh;
+  padding-bottom: 7%;
+  height: 500px;
 
   border-bottom: var(--bg-secondary) solid 8px;
 }
@@ -140,7 +143,7 @@
   border: var(--hr-line-thin) solid var(--accent-secondary);
   border-radius: 5%;
 
-  box-shadow: 2px 2px 40px var(--accent-primary);
+  box-shadow: 2px 2px 60px var(--accent-primary);
 
   background-image: linear-gradient(
     to bottom right,
@@ -151,6 +154,7 @@
 #recent-work .card p {
   font-size: 1.4em;
   text-align: center;
+  margin-bottom: auto;
 }
 #recent-work .card h1 {
   font-size: 3em;
@@ -162,23 +166,21 @@
 #recent-work .card .downloads {
   display: flex;
   justify-content: center;
-  gap: 5%;
-  font-size: 1.2em;
+  font-size: 1.4em;
+  gap: 2%;
   height: 10%;
+  width: 100%;
+  margin-bottom: auto;
+}
+#recent-work .card .downloads svg {
+  width: 1.4em;
+  position: relative;
+  top: -0.6em;
 }
 
 .main-content {
   background-color: var(--bg-secondary);
   border-top: 20px solid black;
-}
-
-.main-document {
-  margin: 3vw 8vw 3vw;
-  display: flex;
-  flex-direction: column;
-  gap: 1vh;
-  border-radius: var(--border-radius-1);
-  opacity: var(--base-opacity);
 }
 
 /*
@@ -220,10 +222,10 @@ Article and Markup Styling
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  width: 100%;
   margin-top: auto;
   background-color: var(--primary-color);
-  padding-top: 5vw;
+  padding-top: 50px;
 }
 #footer hr {
   height: 1px;
@@ -233,32 +235,33 @@ Article and Markup Styling
   background-color: var(--base-color);
 }
 #footer .footer-cards {
-  width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
+  width: 100%;
   gap: 5%;
 }
 
 .custom-link,
 .content a {
-  color: var(--link-color);
+  color: var(--link-active);
   font-style: italic;
 }
 
 .custom-link:visited,
 .content a {
-  color: var(--link-visited-color);
+  color: var(--link-used);
 }
 
 .custom-link:hover,
 .content a {
-  color: var(--link-hover-color);
+  color: var(--text-color-dark);
 }
 
 .custom-link:active,
 .content a {
-  color: var(--link-color);
+  color: var(--link-active);
 }
 
 /* Selection box styling */
