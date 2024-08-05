@@ -49,7 +49,9 @@
   height: 100%;
   border-left: var(--hr-line-thin) solid white;
   font-weight: bold;
+
   font-size: 2em;
+
   color: var(--base-color);
   text-decoration: none;
 
@@ -90,9 +92,41 @@
   border-bottom: var(--hr-line-thick) solid var(--text-color-dark);
   padding-bottom: 2%;
 }
-#hero .hero-text h1|h2 {
+#hero .hero-text h1, h2 {
   margin: 0;
-  margin-bottom: 1%;
+  margin-bottom: 2%;
+}
+
+/* Hero Light (for pages other than home) */
+#hero-light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  /* Adds rounded bottom border*/
+  -webkit-mask: radial-gradient(100% 100% at top, #fff 60%, #0000 61%);
+  mask: radial-gradient(200% 160% at top, #fff 60%, #0000 61%);
+  height: 50vh;
+}
+#hero-light .hero-text {
+  position: absolute;
+  mix-blend-mode: difference; /* Makes it be the inverse of bg */
+  text-align: center;
+  border-bottom: var(--hr-line-thick) solid var(--text-color-dark);
+  padding-left: 2%;
+  padding-right: 2%;
+}
+#hero-light .hero-text h1 {
+  font-size: 3.4em;
+  line-height: 1.3em;
+  margin-bottom: 0;
+}
+.border {
+  background-color: blue;
+  margin-top: 100px;
+  width: 100%;
+  border-bottom: 24px var(--bg-secondary) solid;
 }
 
 /* About Section of Home Page*/
@@ -129,7 +163,7 @@
   padding-bottom: 7%;
   height: 500px;
 
-  border-bottom: var(--bg-secondary) solid 8px;
+  border-bottom: var(--bg-secondary) solid 24px;
 }
 #recent-work .card {
   display: flex;
@@ -144,7 +178,7 @@
   border: var(--hr-line-thin) solid var(--accent-secondary);
   border-radius: 5%;
 
-  box-shadow: 2px 2px 60px var(--accent-primary);
+  box-shadow: 2px 2px 50px var(--accent-primary);
 
   background-image: linear-gradient(
     to bottom right,
@@ -157,8 +191,7 @@
 }
 #recent-work .card:hover {
   bottom: 50px;
-  box-shadow: 2px 2px 120px var(--accent-primary);
-
+  box-shadow: 2px 2px 100px var(--accent-primary);
 }
 #recent-work .card p {
   font-size: 1.4em;
@@ -171,6 +204,14 @@
 }
 #recent-work .card img {
   width: 60%;
+}
+#recent-work .card img:hover {
+  border-radius: 50%;
+  cursor: pointer;
+  filter: drop-shadow(5px 0 0 var(--accent-primary))
+    drop-shadow(0 5px 0 var(--accent-secondary))
+    drop-shadow(-5px 0 0 var(--accent-secondary))
+    drop-shadow(0 -5px 0 var(--accent-secondary));
 }
 #recent-work .card .downloads {
   display: flex;
@@ -189,27 +230,27 @@
 
 .main-content {
   background-color: var(--bg-secondary);
-  border-top: 20px solid black;
+  border-top: 32px solid black;
+  padding: 15%;
+  padding-top: 2%;
+  padding-bottom: 5%;
 }
 
-/*
-Article and Markup Styling
-*/
-
-#markup {
+/* Article MarkDown Styling*/
+#markdown {
   padding: 0.5vw 5vw 2vw;
   margin: 0;
 }
-#markup hr {
+#markdown hr {
   color: var(--base-color);
   width: 100%;
   padding: 0;
   margin: 0;
 }
-#markup pre {
+#markdown pre {
   width: 95%;
 }
-#markup blockquote p::before {
+#markdown blockquote p::before {
   content: "";
   display: block;
   position: absolute;
@@ -220,7 +261,7 @@ Article and Markup Styling
   border-radius: 8px;
   background: var(--accent-color);
 }
-#markup blockquote {
+#markdown blockquote {
   margin-left: 10px;
   padding: 0em 0.4em 0em 1em;
   position: relative;
@@ -235,6 +276,7 @@ Article and Markup Styling
   margin-top: auto;
   background-color: var(--primary-color);
   padding-top: 50px;
+  font-size: 1.1em;
 }
 #footer hr {
   height: 1px;
@@ -252,53 +294,42 @@ Article and Markup Styling
   gap: 5%;
 }
 
+/* Custom Link Styling */
 .custom-link,
-.content a {
+#markdown a {
   color: var(--link-active);
   font-style: italic;
 }
-
 .custom-link:visited,
-.content a {
+#markdown a {
   color: var(--link-used);
 }
-
 .custom-link:hover,
-.content a {
+#markdown a {
   color: var(--text-color-dark);
 }
-
 .custom-link:active,
-.content a {
+#markdown a {
   color: var(--link-active);
 }
 
-/* Selection box styling */
-
-.article-list {
-  padding: 0.5vw 5vw 1vw;
+/* Article List Styling*/
+#article-list {
   margin: 0;
 }
-
-.article-list .selection-list-header {
-  background-color: var(--secondary-color);
-  padding: 2% 5% 1%;
-  border-radius: var(--border-radius-1);
-  box-shadow: var(--box-shadow-2);
-  opacity: var(--base-opacity);
-  border-color: var(--accent-color);
-  border-width: 2px;
-  border-style: solid;
+#article-list .selection-list-header {
+  margin: 2% 10% 2%;
+  padding: 1% 5% 1%;
+  text-align: center;
+  border-bottom: var(--hr-line-thin) solid var(--text-color-dark);
 }
-
-.article-list .selection-list-header hr {
-  height: 1px;
-  background-color: var(--base-color);
-  color: var(--base-color);
-  opacity: var(--base-opacity);
+#article-list .selection-list-header h1 {
+  font-size: 3em;
 }
-
-.article-list .selection-list {
+#article-list .selection-list-header p {
+  font-size: 1.5em;
+}
+#article-list .selection-list {
   list-style-type: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -306,59 +337,50 @@ Article and Markup Styling
   justify-content: center;
   padding: 0;
 }
+#article-list .selection-list li {
+  border: 2px var(--accent-secondary) solid;
+  border-radius: 5%;
 
-.article-list .selection-list li {
-  /* General text styling */
-  color: var(--secondary-color);
-  /* Border styling */
-  border-color: var(--primary-color);
-  border-width: 3px;
-  border-style: solid;
-  border-radius: var(--border-radius-1);
-  /* General looks */
-  background-color: var(--base-color);
   padding: 2% 5% 1%;
-  box-shadow: var(--box-shadow-2);
   cursor: pointer;
-  opacity: var(--base-opacity);
   display: flex;
   flex-direction: column;
-}
 
-.article-list .selection-list li hr {
-  height: 1px;
-  background-color: var(--primary-color);
-  width: 100%;
-}
+  background-image: linear-gradient(
+    to bottom right,
+    var(--bg-primary),
+    var(--bg-secondary)
+  );
 
-.article-list .selection-list li div .tag {
+  font-size: 1.3em;
+}
+#article-list .selection-list li:hover {
+  box-shadow: 2px 2px 20px var(--accent-primary);
+}
+#article-list .selection-list li div .tag {
   float: left;
-  font-weight: bold;
-}
+  font-weight: 400;
 
-.article-list .selection-list li div .date {
+  font-size: 0.8em;
+}
+#article-list .selection-list li div .date {
   float: right;
   font-weight: 400;
+  font-size: 0.8em;
 }
-
-.article-list .selection-list li h4 {
+#article-list .selection-list li h4 {
   padding: 5px 5px 5px;
   margin: 0;
 }
 
-/*
-Article info section
-*/
-
+/* Article Info Section*/
 .article-info {
   padding: 1.5vw 1vw 0vw;
   margin: 0;
 }
-
 .article-info .tags {
   float: left;
 }
-
 .article-info .date {
   float: right;
 }

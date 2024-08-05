@@ -24,6 +24,7 @@
     <script src="scripts/load_elements.js"></script>
     <script src="scripts/load_site_info.js"></script>
     <script src="scripts/load_page.js"></script>
+    <script src="scripts/scroll.js"></script>
 
     <script type="importmap">
       {
@@ -33,9 +34,7 @@
         }
       }
     </script>
-
     <script type="module" src="scripts/three_js_home.js"></script>
-    <script src="scripts/scroll.js"></script>
   </head>
 
   <body>
@@ -67,9 +66,7 @@
     <!-- About Me -->
     <div id="about">
       <div class="img-container">
-        <img
-          src="https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/201011/20101123131216-1_0.jpg?itok=ma_P1FSF"
-        />
+        
       </div>
       <p class="highlighted">
         I am Liam Israel, a recent highschool graduate, and soon to be college
@@ -101,52 +98,46 @@
           </svg>
           16.1k+ downloads.
         </div>
-        <img src="https://crates.io/assets/cargo.png" />
+        <img onclick="window.location.href='https://crates.io/users/Larmbs'" src="https://crates.io/assets/cargo.png"/>
       </div>
       <div class="card">
         <h1>IOT Network</h1>
         <p>
           Built and deployed a personal <a target="_blank" class="custom-link" href="https://en.wikipedia.org/wiki/Internet_of_things">Internet Of Things</a> network to monitor and configure ESP32 devices.
         </p>
-        <img src="assets/images/IOT-Photoroom.png" />
+        <img onclick="window.location.href='https://github.com/Larmbs/iot-net'" src="assets/images/IOT-Photoroom.png" />
       </div>
       <div class="card">
         <h1>Games</h1>
         <p>
           I have created numerous games and sims. Notably I have built a Fluid Simulation, Mine Sweeper, a Sand Engine, and Lunar Lander.
         </p>
-        <img src="assets/images/games_green_3D_isometric_rende-Photoroom.png" />
+        <img onclick="window.location.href='https://github.com/Larmbs/sand-engine'" src="assets/images/games_green_3D_isometric_rende-Photoroom.png" />
 
       </div>
     </div>
 
     <!-- Main part of page -->
     <div class="main-content">
-      <div class="article-info" style="display: none" id="info-mask">
-        <span class="tags" id="article-tags"> Tags: </span>
-        <span class="date" id="article-date"> Created: </span>
-      </div>
-
-      <div class="markdown" id="markdown">
+      <div id="markdown">
         <!--Article will go here-->
       </div>
 
       <!-- List of articles and featured ones go here-->
-      <div id="list-mask" style="display: none">
-        <div class="article-list">
-          <h2 class="selection-list-header">
-            Featured &#x1F31F;:
-            <hr />
-          </h2>
-          <!-- Featured items go here -->
-          <ol id="featured-list" class="selection-list"></ol>
-          <h2 class="selection-list-header">
-            All &#x1F4DA;:
-            <hr />
-          </h2>
-          <!-- Featured items go here -->
-          <ul id="regular-select-list" class="selection-list"></ul>
+      <div id="article-list" style="display: none">
+        <div class="selection-list-header">
+          <h1>Featured</h1>
+          <p>Here are some of my favorite projects. Take a look for yourself and see if you like them.</p>
         </div>
+        
+        <!-- Featured items go here -->
+        <ol id="featured-list" class="selection-list"></ol>
+        <div class="selection-list-header">
+          <h1>Recent</h1>
+          <p>Here are some of my most recent published projects. If your looking for even newer ones check out my GitHub.</p>
+        </div>
+        <!-- Featured items go here -->
+        <ul id="regular-select-list" class="selection-list"></ul>
       </div>
     </div>
 

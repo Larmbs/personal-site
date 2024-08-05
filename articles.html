@@ -24,41 +24,61 @@
     <script src="/scripts/load_elements.js"></script>
     <script src="/scripts/load_site_info.js"></script>
     <script src="/scripts/load_page.js"></script>
+    <script src="scripts/scroll.js"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="scripts/three_js_home.js"></script>
   </head>
 
   <body>
     <div id="navbar"></div>
+    <div id="hero-light">
+      <!-- Hero Section -->
+      <div class="hero-text">
+        <h1>Articles</h1>
+        <h2>Check out some of the articles Ive written</h2>
+      </div>
+
+      <div id="container"></div>
+    </div>
+    <div class="border"></div>
 
     <!-- Main part of page -->
-    <div class="main-document">
+    <div class="main-content">
       <div class="article-info" style="display: none" id="info-mask">
         <span class="tags" id="article-tags"> Tags: </span>
         <span class="date" id="article-date"> Created: </span>
       </div>
 
-      <div class="content" id="markdown">
+      <div id="markdown">
         <!--Article will go here-->
       </div>
 
       <!-- List of articles and featured ones go here-->
-      <div id="list-mask" style="display: none">
-        <div class="article-list">
-          <h2 class="selection-list-header">
-            Featured &#x1F31F;:
-            <hr />
-          </h2>
-          <!-- Featured items go here -->
-          <ol id="featured-list" class="selection-list"></ol>
-          <h2 class="selection-list-header">
-            All &#x1F4DA;:
-            <hr />
-          </h2>
-          <!-- Featured items go here -->
-          <ul id="regular-select-list" class="selection-list"></ul>
+      <div id="article-list" style="display: none">
+        <div class="selection-list-header">
+          <h1>Featured</h1>
+          <p>Here are some of my favorite projects. Take a look for yourself and see if you like them.</p>
         </div>
+        
+        <!-- Featured items go here -->
+        <ol id="featured-list" class="selection-list"></ol>
+        <div class="selection-list-header">
+          <h1>Recent</h1>
+          <p>Here are some of my most recent published projects. If your looking for even newer ones check out my GitHub.</p>
+        </div>
+        <!-- Featured items go here -->
+        <ul id="regular-select-list" class="selection-list"></ul>
       </div>
     </div>
-    
+
     <div id="footer"></div>
   </body>
 </html>

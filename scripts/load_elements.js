@@ -19,6 +19,16 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
+    async function load_header_light() {
+        const header_light = await fetch("elements/hero_light.html");
+        const text = await header_light.text();
+
+        document.querySelectorAll("#hero-light").forEach((element) => {
+            element.innerHTML = text;
+        });
+    }
+
     load_navbar();
     load_footer();
+    //load_header_light();
 });

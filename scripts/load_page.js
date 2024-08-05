@@ -41,7 +41,7 @@ function load_markdown(url) {
 
 // Fills up select felids in selection lists
 function populate_selection_list(markdown) {
-    document.getElementById("list-mask").style.setProperty("display", "block");
+    document.querySelector("#article-list").style.setProperty("display", "block");
 
     const featured_list = document.getElementById("featured-list");
     const regular_select_list = document.getElementById("regular-select-list");
@@ -73,9 +73,6 @@ function populate_selection_list(markdown) {
         meta_data.appendChild(tag);
         meta_data.appendChild(date);
 
-        // Adding a hr element
-        const hr = document.createElement("hr");
-
         // Creating a content box
         const content = document.createElement("h4");
         content.innerHTML = name;
@@ -83,7 +80,6 @@ function populate_selection_list(markdown) {
         // Putting it all into a list item, clickable
         const li = document.createElement("li");
         li.appendChild(meta_data);
-        li.appendChild(hr);
         li.appendChild(content);
         li.setAttribute(
             "onclick",
