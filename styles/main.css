@@ -84,9 +84,9 @@
 
   /* Font Styling */
   mix-blend-mode: difference; /* Makes it be the inverse of bg */
-  font-size: 1.5em;
+  font-size: 1.6em;
   padding: 1%;
-  line-height: 1.3em;
+  line-height: 1.6em;
 }
 #hero .hero-text p {
   border-bottom: var(--hr-line-thick) solid var(--text-color-dark);
