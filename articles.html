@@ -43,7 +43,9 @@
       <!-- Hero Section -->
       <div class="hero-text">
         <h1 id="article-name">Articles</h1>
-        <h2 id="article-description">Check out some of the articles I have written</h2>
+        <h2 id="article-description">
+          Check out some of the articles I have written
+        </h2>
       </div>
 
       <div id="container"></div>
@@ -52,12 +54,12 @@
 
     <!-- Main part of page -->
     <div class="main-content">
-      <div class="article-info" style="display: none" id="info-mask">
-        <span class="tags" id="article-tags"> Tags: </span>
-        <span class="date" id="article-date"> Created: </span>
-      </div>
+      <div id="markdown" style="display: none">
+        <div class="info">
+          <span class="tags" id="article-tags"> Tags: </span>
+          <span class="date" id="article-date"> Created: </span>
+        </div>
 
-      <div id="markdown">
         <!--Article will go here-->
       </div>
 
@@ -65,14 +67,20 @@
       <div id="article-list" style="display: none">
         <div class="selection-list-header">
           <h1>Featured</h1>
-          <p>Here are some of my favorite projects. Take a look for yourself and see if you like them.</p>
+          <p>
+            Here are some of my favorite projects. Take a look for yourself and
+            see if you like them.
+          </p>
         </div>
-        
+
         <!-- Featured items go here -->
         <ol id="featured-list" class="selection-list"></ol>
         <div class="selection-list-header">
           <h1>Recent</h1>
-          <p>Here are some of my most recent published projects. If your looking for even newer ones check out my GitHub.</p>
+          <p>
+            Here are some of my most recent published projects. If your looking
+            for even newer ones check out my GitHub.
+          </p>
         </div>
         <!-- Featured items go here -->
         <ul id="regular-select-list" class="selection-list"></ul>

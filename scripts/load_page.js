@@ -34,8 +34,9 @@ function load_markdown(url) {
     fetch(url)
         .then((r) => r.text())
         .then((text) => {
-            document.getElementById("markdown").innerHTML = marked.parse(text);
+            document.getElementById("markdown").innerHTML += marked.parse(text);
             hljs.highlightAll();
+            document.getElementById("markdown").style.setProperty("display", "block");
         });
 }
 
@@ -91,7 +92,6 @@ function populate_selection_list(markdown) {
 
 // Fills out article info section
 function populate_article_info(article, name) {
-    document.getElementById("info-mask").style.setProperty("display", "block");
     document.getElementById("article-tags").innerHTML = format_tags(article.tags);
     document.getElementById(
         "article-date"
