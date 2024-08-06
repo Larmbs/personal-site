@@ -24,7 +24,7 @@ async function load_page_content() {
             populate_selection_list(markdown);
         } else {
             load_markdown(markdown.articles[article_name].src);
-            populate_article_info(markdown.articles[article_name]);
+            populate_article_info(markdown.articles[article_name], article_name);
         }
     }
 }
@@ -66,7 +66,7 @@ function populate_selection_list(markdown) {
         // Creating selection box date
         const date = document.createElement("span");
         date.className = "date";
-        date.innerHTML = `~${data.time_added}~`;
+        date.innerHTML = `${data.time_added}`;
 
         // Putting it into a meta element
         const meta_data = document.createElement("div");
@@ -90,12 +90,14 @@ function populate_selection_list(markdown) {
 }
 
 // Fills out article info section
-function populate_article_info(article) {
+function populate_article_info(article, name) {
     document.getElementById("info-mask").style.setProperty("display", "block");
     document.getElementById("article-tags").innerHTML = format_tags(article.tags);
     document.getElementById(
         "article-date"
     ).innerHTML = `Created: ${article.time_added}`;
+    document.getElementById("article-name").innerHTML = name;
+    document.getElementById("article-description").innerHTML = "";
 }
 
 function format_tags(tags) {
