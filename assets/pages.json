@@ -9,6 +9,12 @@
     "src": "assets/site/about_me.md"
   },
   "articles": {
+    "Pascal`s Triangle Explorer": {
+      "src": "https://raw.githubusercontent.com/Larmbs/pascal-tri-explorer/main/README.md",
+      "tags": ["Graphics", "Math", "Number Theory"],
+      "type": "github",
+      "time_added": "Aug 6, 2024"
+    },
     "My Machine Learning Env": {
       "src": "assets/articles/machine-learning-env.md",
       "tags": ["ML"],
