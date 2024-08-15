@@ -9,6 +9,12 @@
     "src": "assets/site/about_me.md"
   },
   "articles": {
+    "Prompt Engineering": {
+      "src": "https://raw.githubusercontent.com/Larmbs/idea_generator/main/README.md",
+      "tags": ["AI", "ML"],
+      "type": "github",
+      "time_added": "Aug 15 2024"
+    },
     "Pascal`s Triangle Explorer": {
       "src": "https://raw.githubusercontent.com/Larmbs/pascal-tri-explorer/main/README.md",
       "tags": ["Graphics", "Math", "Number Theory"],
