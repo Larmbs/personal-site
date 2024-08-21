@@ -392,3 +392,24 @@ h2 {
   margin: 0;
 }
 
+
+#contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+}
+
+#contacts .card {
+  aspect-ratio: 1;
+  width: auto;
+  font-size: 9rem;
+}
+
+#contacts .card a {
+  color: var(--text-color-dark);
+}
+
+#contacts .card a:hover {
+  color: var(--link-active);
+}
