@@ -9,6 +9,12 @@
     "src": "assets/site/about_me.md"
   },
   "articles": {
+    "Fluid Simulation": {
+      "src": "https://raw.githubusercontent.com/Larmbs/fluid-sim-rs/master/README.md",
+      "tags": ["Math", "Physics"],
+      "type": "github",
+      "time_added": "Aug 28, 2024"
+    },
     "Prompt Engineering": {
       "src": "https://raw.githubusercontent.com/Larmbs/idea_generator/main/README.md",
       "tags": ["AI", "ML"],
@@ -65,6 +71,7 @@
     }
   },
   "featured": [
+    "Fluid Simulation",
     "Pseudo Random Number Generators (PRNG)",
     "Prompt Engineering",
     "Pascal`s Triangle Explorer",
