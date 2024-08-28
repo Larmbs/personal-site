@@ -15,6 +15,12 @@
       "type": "github",
       "time_added": "Aug 15 2024"
     },
+    "Pseudo Random Number Generators (PRNG)": {
+      "src": "https://raw.githubusercontent.com/Larmbs/pseudo-random-numbers/main/README.md",
+      "tags": ["Math", "Number Theory"],
+      "type": "github",
+      "time_added": "Aug 27, 2024"
+    },
     "Pascal`s Triangle Explorer": {
       "src": "https://raw.githubusercontent.com/Larmbs/pascal-tri-explorer/main/README.md",
       "tags": ["Graphics", "Math", "Number Theory"],
@@ -59,6 +65,7 @@
     }
   },
   "featured": [
+    "Pseudo Random Number Generators (PRNG)",
     "Prompt Engineering",
     "Pascal`s Triangle Explorer",
     "Sand Engine",
