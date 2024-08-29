@@ -9,6 +9,12 @@
     "src": "assets/site/about_me.md"
   },
   "articles": {
+    "Music Streaming Setup": {
+      "src": "https://raw.githubusercontent.com/Larmbs/Articles/main/song_streaming_setup.md",
+      "tags": ["Utility"],
+      "type": "github",
+      "time_added": "Aug 28, 2024"
+    },
     "Fluid Simulation": {
       "src": "https://raw.githubusercontent.com/Larmbs/fluid-sim-rs/master/README.md",
       "tags": ["Math", "Physics"],
