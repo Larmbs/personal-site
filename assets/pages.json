@@ -9,6 +9,12 @@
     "src": "assets/site/about_me.md"
   },
   "articles": {
+    "MineSweeperOnline": {
+      "src": "https://raw.githubusercontent.com/Larmbs/minesweeperonline-rs/master/README.md",
+      "tags": ["Sockets", "Game"],
+      "type": "github",
+      "time_added": "Sep 8, 2024"
+    },
     "Music Streaming Setup": {
       "src": "https://raw.githubusercontent.com/Larmbs/Articles/main/song_streaming_setup.md",
       "tags": ["Utility"],
