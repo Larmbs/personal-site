@@ -1,4 +1,3 @@
-# [Personal Site]
-This is just a personal site I started to share work and projects.
+# My Personal Site
 
 https://larmbs.github.io/personal-site/
